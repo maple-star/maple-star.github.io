@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maple-star.github.io</id>
     <title>maple-star</title>
-    <updated>2021-04-20T13:25:00.479Z</updated>
+    <updated>2021-04-21T11:49:29.457Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maple-star.github.io"/>
     <link rel="self" href="https://maple-star.github.io/atom.xml"/>
@@ -11,7 +11,7 @@
     <icon>https://maple-star.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, maple-star</rights>
     <entry>
-        <title type="html"><![CDATA[学习]]></title>
+        <title type="html"><![CDATA[函数参数调用1-1]]></title>
         <id>https://maple-star.github.io/post/quan-zhi/</id>
         <link href="https://maple-star.github.io/post/quan-zhi/">
         </link>
