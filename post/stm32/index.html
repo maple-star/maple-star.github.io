@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>学习 | maple-star</title>
+<title>stm32 | maple-star</title>
 <meta name="description" content="驽马十驾，功在不舍。" />
 <link rel="shortcut icon" href="https://maple-star.github.io/favicon.ico">
 <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
@@ -14,11 +14,25 @@
 <script src="https://maple-star.github.io/media/js/view-image.min.js"></script>
 <script src="https://maple-star.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://maple-star.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="学习使用cudeMX
+1、创建工程点击
+2、选择芯片类型
+3、设置
+
+4、时钟设置
+5、生成设置
+
+
+
+
+GPIO电平输出HAL库函数
+HAL_GPIO_writepin(GPIOB,GPIO_PIN_8,GPIO_SET);//对B8引脚..." />
+    <meta name="keywords" content="" />
+    <script src="https://maple-star.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://maple-star.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -85,45 +99,97 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-                
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># 学习</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://maple-star.github.io/post/ad/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('/media/images/gridea.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2021-04-19">2021-04-19</time>
-          <h4 class="title usmall">
-            <a href="https://maple-star.github.io/post/ad/">AD</a>
-          </h4>
-        </div>
-      </article>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
-            
-                        <div class="epcl-pagination section">
-              <div class="nav">
-                
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://maple-star.github.io/post-images/stm32.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-05-21"><i class="fa fa-calendar"></i><span class="lately">7 天前</span></time>
+              
+              <a href="https://maple-star.github.io/post/stm32/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/stm32/"> </span>
+              </a>
+              <span id="/stm32/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
                 
               </div>
+              <h1 class="title ularge white bold">stm32</h1>
             </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <p>学习使用cudeMX<br>
+1、创建工程点击<img src="https://maple-star.github.io/post-images/1622188374826.png" alt="" loading="lazy"><br>
+2、选择芯片类型<img src="https://maple-star.github.io/post-images/1622188724240.png" alt="" loading="lazy"><br>
+3、设置<img src="https://maple-star.github.io/post-images/1622189372974.png" alt="" loading="lazy"><br>
+<img src="https://maple-star.github.io/post-images/1622189382944.png" alt="" loading="lazy"><br>
+4、时钟设置<img src="https://maple-star.github.io/post-images/1622189432650.png" alt="" loading="lazy"><br>
+5、生成设置<img src="https://maple-star.github.io/post-images/1622189466530.png" alt="" loading="lazy"><br>
+<img src="https://maple-star.github.io/post-images/1622189473688.png" alt="" loading="lazy"></p>
+<p><img src="https://maple-star.github.io/post-images/1622189888684.png" alt="" loading="lazy"><br>
+<img src="https://maple-star.github.io/post-images/1622189900733.png" alt="" loading="lazy"><br>
+<img src="https://maple-star.github.io/post-images/1622189912331.png" alt="" loading="lazy"></p>
+<p>GPIO电平输出HAL库函数<br>
+HAL_GPIO_writepin(GPIOB,GPIO_PIN_8,GPIO_SET);//对B8引脚施加高电平 🤡<br>
+|  1、GPIOX;目标引脚的端口号【注】X指端口号<br>
+参数|  2、GPIOX;目标引脚的引脚号【注】X指引脚号<br>
+|  3、 高电平：GPIO_PIN_SET;<br>
+低电平：GPIO_PIN_RESET;<br>
+<img src="https://maple-star.github.io/post-images/1622191787628.png" alt="" loading="lazy"><br>
+其实在再写程序时会提示相关代码<br>
+GPIO电频翻转<br>
+HAL_GPIO_TogglegPin(GPIOA,GPIO_PIN_3);<br>
+其实就是一个语句<br>
+在做流水灯时用的</p>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://maple-star.github.io/post-images/c-zhi-zhen.png');"></div>
+                 <a href="https://maple-star.github.io/post/c-zhi-zhen/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-05-08">2021-05-08</time>
+                  <h4 class="title white no-margin">C指针</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://maple-star.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
+              <div id="comments" class="bg-white hosted ">
+                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+              </div>
+              <div class="clear"></div>
+            
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -253,6 +319,9 @@
     <div class="clear"></div>
 
         
+
+      
+    <script src="https://maple-star.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->

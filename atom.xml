@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maple-star.github.io</id>
     <title>maple-star</title>
-    <updated>2021-05-15T07:58:25.748Z</updated>
+    <updated>2021-05-28T08:54:21.444Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maple-star.github.io"/>
     <link rel="self" href="https://maple-star.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://maple-star.github.io/images/avatar.png</logo>
     <icon>https://maple-star.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, maple-star</rights>
+    <entry>
+        <title type="html"><![CDATA[stm32]]></title>
+        <id>https://maple-star.github.io/post/stm32/</id>
+        <link href="https://maple-star.github.io/post/stm32/">
+        </link>
+        <updated>2021-05-21T10:37:53.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[C指针]]></title>
         <id>https://maple-star.github.io/post/c-zhi-zhen/</id>
