@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>git基本命令 | maple-star</title>
+<title>H7板子动态数码管 | maple-star</title>
 <meta name="description" content="驽马十驾，功在不舍。" />
 <link rel="shortcut icon" href="https://maple-star.github.io/favicon.ico">
 <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
@@ -15,13 +15,16 @@
 <script src="https://maple-star.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://maple-star.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="基本的Linux命令学习
-1 、cd:改变目录。
-2、cd..回退到上一个目录,直接cd进入默认目录
-3、pwd :显示当前所在的目录路径。
-4、ls(l): 都是列出当前目录中的所有文件,只不过(两个1)列出的内容更为详细。
-5、touc..." />
-    <meta name="keywords" content="LINUX" />
+    <meta name="description" content="
+任务：实现六位数码管从0到5依次显示
+熟悉程序流程，尝试使用不同方式实现目的
+环境：
+软件：keil5、stm32cubeMX
+硬件：H7开发板
+计划：1、查找stm32工程资料
+2、创建工程
+3、参考51的数码管程序，移植到stm32工..." />
+    <meta name="keywords" content="学习" />
     <script src="https://maple-star.github.io/media/js/waterfall.min.js"></script>
     <script src="https://maple-star.github.io/media/js/prism.min.js"></script>
   </head>
@@ -95,23 +98,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://maple-star.github.io/post-images/git-ji-ben-ming-ling.png');">
+          <div class="featured-image cover" style="background-image: url('https://maple-star.github.io/post-images/h7-ban-zi-dong-tai-shu-ma-guan.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2021-04-23"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2021-07-03"><i class="fa fa-calendar"></i><span class="lately">1 小时前</span></time>
               
-              <a href="https://maple-star.github.io/post/git-ji-ben-ming-ling/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/git-ji-ben-ming-ling/"> </span>
+              <a href="https://maple-star.github.io/post/h7-ban-zi-dong-tai-shu-ma-guan/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/h7-ban-zi-dong-tai-shu-ma-guan/"> </span>
               </a>
-              <span id="/git-ji-ben-ming-ling/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/h7-ban-zi-dong-tai-shu-ma-guan/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://maple-star.github.io/tag/D-J1nMg_y/" class="ctag ctag-0 ctag-D-J1nMg_y" aria-label="">LINUX</a>
+                      <a href="https://maple-star.github.io/tag/yCOIWee_V/" class="ctag ctag-0 ctag-yCOIWee_V" aria-label="">学习</a>
                     
               </div>
-              <h1 class="title ularge white bold">git基本命令</h1>
+              <h1 class="title ularge white bold">H7板子动态数码管</h1>
             </div>
           </div>
         </div>  
@@ -121,24 +124,30 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>基本的Linux命令学习<br>
-1 、cd:改变目录。<br>
-2、cd..回退到上一个目录,直接cd进入默认目录<br>
-3、pwd :显示当前所在的目录路径。<br>
-4、ls(l): 都是列出当前目录中的所有文件,只不过(两个1)列出的内容更为详细。<br>
-5、touch :新建一 个文件如touch index.js就会在当前目录下新建一 -个index.js文件。【注】不是文件夹<img src="https://maple-star.github.io/post-images/1619340742887.png" alt="" loading="lazy"><br>
-6、rm:删除一 个文件, rm index.js就会把index.js文件删除。<br>
-7 、mkdir: 新建一个目录,就是新建一 个文件夹。<br>
-8、rm-r:删除-一个文件夹, rm -r src删除src目录  【常用】<br>
-9 、mv移动文件, mv index.html src index.html是我们要移动的文件, src是目标文件夹,当然这样写，必须在同一目录下。<img src="https://maple-star.github.io/post-images/1619340805568.png" alt="" loading="lazy"><br>
-10、reset重新初始化终端/清屏。<br>
-11 、clear清屏。<br>
-12、history查看命令历史。<br>
-13、help帮助。<br>
-14、exit退出。<br>
-15、#表示注释<br>
-16、git init 创建本地仓库<br>
-17、git clone ...(远程仓库链接)，克隆远程仓库</p>
+                  <!-- more -->
+<p>任务：实现六位数码管从0到5依次显示<br>
+熟悉程序流程，尝试使用不同方式实现目的</p>
+<p>环境：<br>
+软件：keil5、stm32cubeMX<br>
+硬件：H7开发板</p>
+<p>计划：1、查找stm32工程资料<br>
+2、创建工程<br>
+3、参考51的数码管程序，移植到stm32工程上<br>
+4、调试修改已经移植的程序<br>
+5、如果成功侧保存记录，否则继续修改调试<br>
+6、成功后思考其他方法，并记录保存</p>
+<p>具体实施：<br>
+1、 从网上搜集stm32H7的相关手册资料和学长给的开发板原理图<br>
+2、参考网上视频（其他开发板教学视频资料）创建工程<br>
+3、思考51和stm32的不同，但数码管操作基本相同，利用这个来移植代码<br>
+（位选、段选数组，用for循环显示数码管）<br>
+<img src="https://maple-star.github.io/post-images/1625307110067.png" alt="" loading="lazy"><br>
+4、查看HAL库函数定义以便于移植程序<img src="https://maple-star.github.io/post-images/1625307275445.gif" alt="" loading="lazy"><br>
+5、移植调试无报错后，就可以开始烧录到板子，查看现象是符合目的<br>
+<img src="https://maple-star.github.io/post-images/1625307502139.gif" alt="" loading="lazy"><br>
+6、还可以使用寄存器或者库函数的形式达到目的，但暂时还未达到任务要求</p>
+<pre><code>    总结：通过自己的摸索基本熟悉程序流程，并有了一定的思考，熟练移植程序的修改和调试。🤓
+</code></pre>
 
                 </div>
                 <div class="clear"></div>
@@ -148,26 +157,13 @@
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://maple-star.github.io/post-images/c-zhi-zhen.png');"></div>
-                 <a href="https://maple-star.github.io/post/c-zhi-zhen/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2021-05-08">2021-05-08</time>
-                  <h4 class="title white no-margin">C指针</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://maple-star.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://maple-star.github.io/media/images/yCOIWee_V.jpg');"></div>
-                 <a href="https://maple-star.github.io/post/ad/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://maple-star.github.io/post-images/stm-xu.png');"></div>
+                 <a href="https://maple-star.github.io/post/stm-xu/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2021-04-19">2021-04-19</time>
-                  <h4 class="title white no-margin">AD</h4>
+                  <time datetime="2021-05-29">2021-05-29</time>
+                  <h4 class="title white no-margin">stm续</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://maple-star.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
