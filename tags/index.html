@@ -38,6 +38,30 @@
 
     <!--------- 数学公式👇---- -->
     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"
+        integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"
+        integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"
+        integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous">
+    </script>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                    left: "$$",
+                    right: "$$",
+                    display: true
+                },
+                {
+                    left: "$",
+                    right: "$",
+                    display: false
+                }
+            ]
+        });
+    </script>
+    
     <!--------- 数学公式👆----------------- -->
     <!--------- daovocie功能👇 ------------------->
     
@@ -89,7 +113,7 @@
                         src='https://maple-star.github.io/media/images/music.png' alt="音乐播放器" class="musicbtn"></i></a>
         </div>
         <div class="avatar-border">
-            <img src="https://maple-star.github.io/images/avatar.png?v=1636610561467" class="avatar">
+            <img src="https://maple-star.github.io/images/avatar.png?v=1636618092493" class="avatar">
         </div>
         <div class="sitename">maple-star</div>
         <span class="description" data-text='["驽马十驾，功在不舍。"]'>&nbsp;</span>
@@ -933,9 +957,9 @@ menulist.eq(i).show();
 <script>
     var bgchoice = "link";
     if(bgchoice=='default')
-        var plbgurl = ""
+        var plbgurl = "\media\images\custom-mobileplbgimage.png"
     else  
-        var plbgurl = "https://imgtu.com/i/IdvwLj"
+        var plbgurl = "https://z3.ax1x.com/2021/11/11/IdvwLj.png"
     $(".plbg").attr("src",plbgurl);
     $(".plbg").fadeIn(200);
 </script>
@@ -1001,16 +1025,6 @@ menulist.eq(i).show();
 <!-- 标签框随机色彩功能👆 -->
 
 <!-------------------- live2d功能👇 --------------------------->
-
-<script type="text/javascript">
-    var message_Path = '/live2d/'
-    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
-</script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/live2d.js"></script>
-<script type="text/javascript" src="https://maple-star.github.io/media/live2d/js/message.js"></script>
-<script type="text/javascript">
-    loadlive2d("live2d", "https://maple-star.github.io/media/live2d/assets/tororo.model.json");
-</script>
 
 <!-------------------- live2d功能👆 --------------------------->
 
