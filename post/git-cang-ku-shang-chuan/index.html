@@ -1,23 +1,229 @@
 <!DOCTYPE html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-<link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
-<link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
-<link rel="stylesheet" href="https://maple-star.github.io/media/css/font-awesome.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-<title>maple-star</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="第一步：初始化git
+git init
+第二步：将本地项目工作区的所有文件添加到暂存区
+git add .          小数点意为添加文件夹下的所有文件，也可以换成具体的文件名，如果你想的话
+第三步： 将暂存区的文件提交到本地仓库
+g..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
+    <!-- 代码渲染风格css -->
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css">
+    
+    <!-- 代码高亮插件 -->
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <!-- 代码复制插件 -->
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <!-- live2d插件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css"
+        integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js"
+        integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/contrib/auto-render.min.js"
+        integrity="sha384-aGfk5kvhIq5x1x5YdvCp4upKZYnA8ckafviDpmWEKp4afOZEqOli7gqSnh8I6enH" crossorigin="anonymous">
+        </script>
+    <script>
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: "$$",
+                right: "$$",
+                display: true
+            },
+            {
+                left: "$",
+                right: "$",
+                display: false
+            }
+            ]
+        });
+    </script>
+    
+    <title>GIT仓库上传</title>
 
+    <!-- 大纲索引css调整 -->
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
+</head>
 
 <body>
-
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="domainname" style="display:none">https://maple-star.github.io</div>
     <div id="content">
-        <div class="nav-large">
-            <div class="row">
-                <!--------------- pc端菜单栏👇 ---------------->
-                <div class="side"><head>
+        <div>
+            <!----------- 移动端导航栏👇 ----------------->
+            <div id="bar">
+                <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
+</head>
+<style>
+  .navmobile {
+    z-index: 15;
+    max-height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar {
+      max-width: 100vw;
+    }
+  }
+
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .mbapspan {
+      padding: 0;
+    }
+  }
+</style>
+<div class="pjaxloading"  onclick="pjaxloadingClose()">
+  <div class="loadingbackground"></div>
+  <div id="loading">
+    <div class="loading">
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+        aria-expanded="false" id="barbutton">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a data-pjax class="navbar-brand" href="https://maple-star.github.io">maple-star&nbsp;&nbsp;|</a>
+      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="barmenu">
+      <ul class="nav navbar-nav">
+        
+        
+        <li>
+          <a data-pjax href="https://maple-star.github.io">
+            首页
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/archives">
+            归档
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="https://maple-star.github.io/post/quan-zhi">
+            学习
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/tags">
+            标签
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/post/about">
+            关于
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        <li><a data-pjax href="https://maple-star.github.io/friends">友链</a></li>
+
+        
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+    let btstate = false;
+    var bt = $("#barbutton");
+    var bm = $("#barmenu");
+    bt.click(function () {
+      dropdown();
+    })
+    function dropdown() {
+      console.log(btstate);
+      //下拉
+      if (btstate == false) {
+        bt.removeClass("collapsed");
+        bt.attr("aria-expanded", "true");
+        bm.attr("aria-expanded", "true")
+        bm.fadeIn(700);
+        btstate = true;
+      }
+      else {
+        bt.addClass("collapsed");
+        bt.attr("aria-expanded", "false");
+        bm.removeClass("in");
+        bm.hide();
+        bm.attr("aria-expanded", "false");
+        btstate = false;
+      }
+    }
+  </script> 
+            </div>
+            <!----------- 移动端导航栏👆 ----------------->
+
+            <!--------------- pc端菜单栏👇 ---------------->
+            <div class="side"><head>
     <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
     
@@ -810,379 +1016,220 @@ menulist.eq(i).show();
 
 
 </div>
-                <!--------------- pc端菜单栏👆 ---------------->
+            <!--------------- pc端菜单栏👆 ---------------->
 
-                <!----------- 移动端导航栏👇 ----------------->
-                <div class="tbar"> <head>
-  <!-- 引入Bootstrap核心样式文件 -->
-  <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
-</head>
-<style>
-  .navmobile {
-    z-index: 15;
-    max-height: 40vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+            <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+            
+            <div>
+                <div id="tab1" class="tab">
+                    <div class="bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="close"></div>
+                </div>
+                <div class="col-md-1 col-lg-3"></div>
+                <!-- main标签，pjax渲染时加载以下内容👇 -->
+                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="padding:0;">
+                    <link rel="stylesheet" href="https://maple-star.github.io/media/css/font-awesome.css">
 
-  @media screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 100vw;
-    }
-  }
-
-  @media screen and (max-width:1200px) and (min-width: 768px) {
-    @media (min-width: 768px) {
-      .navbar-nav {
-        float: right;
-        margin: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width:768px) {
-    .mbapspan {
-      padding: 0;
-    }
-  }
-</style>
-<div class="pjaxloading"  onclick="pjaxloadingClose()">
-  <div class="loadingbackground"></div>
-  <div id="loading">
-    <div class="loading">
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
-        aria-expanded="false" id="barbutton">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a data-pjax class="navbar-brand" href="https://maple-star.github.io">maple-star&nbsp;&nbsp;|</a>
-      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
-          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="barmenu">
-      <ul class="nav navbar-nav">
-        
-        
-        <li>
-          <a data-pjax href="https://maple-star.github.io">
-            首页
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/archives">
-            归档
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="https://maple-star.github.io/post/quan-zhi">
-            学习
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/tags">
-            标签
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/post/about">
-            关于
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        <li><a data-pjax href="https://maple-star.github.io/friends">友链</a></li>
-
-        
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script>
-    let btstate = false;
-    var bt = $("#barbutton");
-    var bm = $("#barmenu");
-    bt.click(function () {
-      dropdown();
-    })
-    function dropdown() {
-      console.log(btstate);
-      //下拉
-      if (btstate == false) {
-        bt.removeClass("collapsed");
-        bt.attr("aria-expanded", "true");
-        bm.attr("aria-expanded", "true")
-        bm.fadeIn(700);
-        btstate = true;
-      }
-      else {
-        bt.addClass("collapsed");
-        bt.attr("aria-expanded", "false");
-        bm.removeClass("in");
-        bm.hide();
-        bm.attr("aria-expanded", "false");
-        btstate = false;
-      }
-    }
-  </script> </div>
-                <!----------- 移动端导航栏👆 ----------------->
-
-                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow postpadding" style="padding-bottom: 0;">
+            
+            <div class="postdetailimg">
                 
-                <div>
-                    <div id="tab1" class="tab">
-                        <div class="bars">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <div class="close"></div>
-                    </div>
-                    <div class="col-lg-3"></div>
-                        <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                            <link rel="stylesheet" href="https://maple-star.github.io/media/css/font-awesome.css">
-
-    <div style="display: none;">
-        
-            
-                <span name="plfeature">https://z3.ax1x.com/2021/11/11/I0Y41I.jpg</span>
+                <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" class="postimage">
                 
-            <span name="pltitle">基于Arduino环境下用ESP32搭建服务器</span>
-            <span name="pllink">https://maple-star.github.io/post/ji-yu-arduino-huan-jing-xia-yong-esp32-da-jian-fu-wu-qi/</span>
-            <span name="pldate">2021-11-12</span>
-            <span name="plstats">3 min read</span>
-            
-                <span name="pltag" alt="基于Arduino环境下用ESP32搭建服务器">ESP32</span>
-                <span name="pltaglink" alt="基于Arduino环境下用ESP32搭建服务器">https://maple-star.github.io/tag/cGY4V7MIB/</span>
-            
-        
-    </div>
-
-    
-    <div id="post-container" class="eleg-allpostscontainer">
-        <div v-for="post in postinfo" class="eleg-posts">
-            <div v-if="post.elegcontainer=='eleg-postcontainer-left'">
-                    <div :class="post.elegcontainer">
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                        
-                        <img class="eleg-swordsmen-left" src="https://maple-star.github.io/media/images/swordsmenleft.webp" alt="">
-                        
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='eleg-tags'>
-                        <div v-for="tag in post.tags">
-                            <div class="posttag">
-                                <a data-pjax href="" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
             </div>
-            <div v-else>
-                    <div :class="post.elegcontainer">
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
-                        </div>
-                        
-                        <img class="eleg-swordsmen" src="https://maple-star.github.io/media/images/swordsmen.webp" alt="">
-                        
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                    </div>
-                    <div class='eleg-tags'>
-                        <div v-for="tag in post.tags">
-                            <div class="posttag">
-                                <a data-pjax href="" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-12-17</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+            <div class="posttag">
+                
             </div>
         </div>
-    </div>
+        
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2 id="ptitle">GIT仓库上传</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://maple-star.github.io/post/git-cang-ku-shang-chuan/</div>
+                <div id="rootaddr" style="display:none">https://maple-star.github.io</div>
+                
+            </div>
+            <div class="text ">
+                <p>第一步：初始化git<br>
+git init<br>
+第二步：将本地项目工作区的所有文件添加到暂存区<br>
+git add .          小数点意为添加文件夹下的所有文件，也可以换成具体的文件名，如果你想的话<br>
+第三步： 将暂存区的文件提交到本地仓库<br>
+git commit -m &quot;注释说明&quot;       注释作用是告诉下载和浏览的用户你这次提交代码所改变的地方<br>
+第四步： 在 gitee(github)上新建远程仓库<br>
+第五步：将本地代码仓库关联到gitee上<br>
+git remote add origin 仓库地址</p>
+<pre><code>如果报错：fatal:remote origin already exists
+解决办法 1.先输入
+                         git remote rm origin
+                2.再输入
+                          git remote add origin 仓库地址<></pre></code>
+<p>如果不是检查前面配置<br>
+第六步：将代码由本地仓库上传到giee(github)远程仓库</p>
+<pre><code>1.如果你的远程库不为空必须做这一步，负责会出错
+   git pull --rebase origin master
+ 2.把当前分支master推送到远程
+    git push -u origin master
+    执行此命令后可能会让输入gitee(github)的账号密码</code></pre>
+<p>在github上只能删除仓库,却无法删除文件夹或文件, 所以只能通过命令来解决</p>
+<pre><code>首先进入你的master文件夹下, Git Bash Here ,打开命令窗口
 
-    
-    <script>
-    var app2 = new Vue({
-      el: '#post-container',
-      mounted:function(){
-        this.getpostInfo();
-      },
-      methods:{
-         getpostInfo:function(){
-             var plflist = $("span[name='plfeature']");
-             var pltlist = $("span[name='pltitle']");
-             var plllist = $("span[name='pllink']");
-             var pldlist = $("span[name='pldate']");
-             var plslist = $("span[name='plstats']");
-             var pltaglist = $("span[name='pltag']");
-             for(var i=0;i<this.pagesize&&i<plflist.length;i++){
-                 var d = {};
-                 var tags = []
-                 d["feature"] = plflist.eq(i).html();
-                 d["title"] = pltlist.eq(i).html();
-                 d["link"] = plllist.eq(i).html();
-                 d["date"] = pldlist.eq(i).html();
-                 d['stats'] = plslist.eq(i).html();
-                 for(var j=0;j<pltaglist.length;j++){
-                     if(pltaglist.eq(j).attr('alt')==d['title'])
-                        tags.push(pltaglist.eq(j).html())
-                 }
-                 d["tags"] = tags;
-                 if(i%2==0)
-                 {
-                     d['elegcontainer'] = 'eleg-postcontainer-left';
-                     d['imgclass'] = 'eleg-img-left'
-                 }
-                 else{
-                    d['elegcontainer'] = 'eleg-postcontainer-right';
-                    d['imgclass'] = 'eleg-img-right' 
-                 }
-                 this.postinfo.push(d);
-             }
-         }
-      },
-      data: {
-        pagesize: "10",
-        postinfo:[],
-      }
-    })
-    </script>
+$ git --help                          # 帮助命令
 
-                            <div>
-                                <div class="pcpagi">
-    <div class="pagi">
-        <ul>
+ 
+
+$ git pull origin master           # 将远程仓库里面的项目拉下来
+
+$ dir                            # 查看有哪些文件夹
+
+$ git rm -r --cached target       # 删除target文件夹
+$ git commit -m '删除了target'        # 提交,添加操作说明
+$ git push -u origin master        # 将本次更改更新到github项目上去</code></pre>
+<pre><code>注:**本地项目中的target文件夹不收操作影响,删除的只是远程仓库中的target, 可放心删除
+
+每次增加文件或删除文件，都要commit 然后直接 git push -u origin master，就可以同步到github上了</code></pre>
+
+            </div>
+            <hr style="width: 80%;">
             
-            <li><a style="width:100px">&nbsp;</a></li>
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong></li>
+            <li><strong>原文链接：</strong>https://maple-star.github.io/post/git-cang-ku-shang-chuan/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
+        </div>
+        
+        <div id="otherpost">
             
-                    <li><a id="page1">1</a></li>
-                    <li><a id="page2" class="active">2</a></li>
-                    <li><a id="page3">3</a></li>
+            
+            <a data-pjax class="next-post-pc" href="https://maple-star.github.io/post/win-kuai-jie-jian/"  style="color: black;">
+                <div id="npcontainer">
                     
-            <li><a style="width:100px">&nbsp;</a></li>
+                    
+                    <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
+                    
+                    
+                    <h4 class="optitle">win快捷键</h4>
+                </div>
+            </a>
+            <div class="next-post">
+                下一篇 <a  data-pjax href="https://maple-star.github.io/post/win-kuai-jie-jian/">win快捷键</a>
+            </div>
             
-                </ul>
+        </div>
     </div>
-</div>
-
-<div id="pagination-prev" style="display:none"> 
-</div>
-<div id="pagination-next" style="display:none"> </div>
-
-<div class="pagination-container">
-      
+    </div>
+    </div>
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+    </div>
+</body>
+<script>
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
+</script>
+                    <div class="toc-container">
+                        
+                    </div>
+                    <div class="tog">
+                        <div class="toggleContainer">
+                            <div class="toggle">
+                                <i class="fas fa-angle-double-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------------- 评论系统👇 ------------------------->
+                    <div id="comment" class="comment">
+                        <div class="commentcontainer">
+                            
+                                
+                            
+                        </div>
+                    </div>
+                    <!---------------------------- 评论系统👆 ------------------------->
+                </div>
+                <!-- main标签，pjax渲染时加载以上内容👆 -->
+                <div class="col-md-1 col-lg-2"></div>
+                <div id="bg">
+                </div>
+            </div>
+            <!-- ----------------左侧菜单栏html 👆-------------------------------------->
+            
+        </div>
+        <!-- aplayer播放器加载👇 -->
+            
+        <!-- aplayer播放器加载👆 -->
+    </div>
     
-</div>
+
+    <!-- 背景图加载方式👇 -->
+    <div id="bgchoice" style="display: none">link
+                </div>
+                
+                <div id="bgurl" style="display:none">https://z3.ax1x.com/2021/11/11/IdvwLj.png</div>
+                
+    <!-- 背景图加载方式👆 -->
+</body>
 
 <script>
-    var prevstr = document.getElementById("pagination-prev").innerHTML;
-    var nextstr = document.getElementById("pagination-next").innerHTML;
-    var page1 = document.getElementById("page1");
-    var page2 = document.getElementById("page2");
-    var page3 = document.getElementById("page3");
-    page1.innerHTML = '-';
-    page2.innerHTML = '1';
-    page3.innerHTML = '-';
-    if (prevstr.length > 5) {
-        if (prevstr.indexOf("page/") != -1) {
-            var prevnum = parseInt(prevstr.split("page/")[1]);
-            page1.innerHTML = prevnum;
-            page2.innerHTML = prevnum + 1;
-        } else {
-            page1.innerHTML = 1;
-            page2.innerHTML = 2;
-        }
-    }
-    if (nextstr.indexOf("page/") != -1) {
-        var nextnum = parseInt(nextstr.split("page/")[1]);
-        page3.innerHTML = nextnum;
-        page2.innerHTML = nextnum - 1;
-    }
+    //初始化
+    //更换twikoo头像
+    setTimeout(replaceAvatar,1000);
+    setTimeout(replaceAvatar,2000);
+    setTimeout(replaceAvatar,8000);
+    // --------为每张图片添加懒加载（lazyload）标签-->懒加载功能 👇------------
+    lazyload();
+    //为文章内所有代码块添加代码复制功能 👇
+    codeinit();
+    // ------代码高亮显示功能-------------
+    hljs.initHighlightingOnLoad();
+    if (shareChoice)
+        shareInit();
+    if (donateChoice)
+        donateInit();
 </script>
-                                <div style="padding-bottom:10%"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2"></div>
-                </div>
-                <!-- ----------------左侧菜单栏html 👆-------------------------------------->
-                
-                <!------------------ 顶部菜单栏html👇--------->
-                
-                <!------------------ 顶部菜单栏html👆--------->
-            </div>
-            
-        </div>
-        <div id="bg">
-        </div>
-        <!------- 背景图加载方式👇----- -->
-        <div id="bgchoice" style="display: none">link
-                    </div>
-                    
-                    <div id="bgurl" style="display:none">https://z3.ax1x.com/2021/11/11/IdvwLj.png</div>
-                       
-        </div>
-        <!------- 背景图加载方式👆 --------------->
-</div>
-</div>
 
-        <div id="landlord">
-            <div class="message" style="opacity:0"></div>
-            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-        </div>
-        <div id="domainname" style="display:none">https://maple-star.github.io
-                </div>
-</body>
-</html>
-<!-------------------- live2d功能👇 --------------------------->
+<!------------------ 加载live2d模型功能（看板娘）👇 ---------------->
 
-<!-------------------- live2d功能👆--------------------------->
+<!------------------ 加载live2d模型功能（看板娘）👆 ---------------->
+
+
+<!----------------------- 返回顶部按钮功能👇 --------------------->
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
+<!----------------------- 返回顶部按钮功能👆 --------------------->
+
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1204,4 +1251,28 @@ menulist.eq(i).show();
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
 
+
+
 <script src="https://maple-star.github.io/media/js/index.js"></script>
+
+
+<script>
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload = function () {
+    //代码块高亮渲染
+    document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+    });
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);   //插件只会寻找一个分享标签渲染，所以需要手动添加到移动端
+        aplayerbtnInit();
+        $(".hljs").css({
+            "padding": "20px"
+        })
+    }
+</script>
+
+<!-- <script src="https://maple-star.github.io/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
