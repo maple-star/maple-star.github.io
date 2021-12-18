@@ -2,17 +2,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="一、概念
-.bss段
-存放没有初始化或者初始化为0的全局变量或者静态局部变量。
+    <meta name="description" content="
 
-.data段
-存放初始化为非0，且非const属性的全局变量或者静态局部变量。
+描述
+C 库函数 void *memcpy(void *str1, const void *str2, size_t n) 从存储区 str2 复制 n 个字节到存储区 str1。
 
-.rodata段
-存放字符串和const常量，一般只放在ROM中。
-..." />
-    <meta name="keywords" content="随手笔记" />
+声明
+下面是 memcpy() 函数的声明。
+
+vo..." />
+    <meta name="keywords" content="C语言" />
     <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
     <!-- 代码渲染风格css -->
@@ -54,7 +53,7 @@
         });
     </script>
     
-    <title>单片机内存分配之 .data .bss .rodata段</title>
+    <title>C语言 memcpy</title>
 
     <!-- 大纲索引css调整 -->
     
@@ -1094,12 +1093,12 @@ menulist.eq(i).show();
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2021-11-14</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-11-16</div>
             <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
             <div class="posttag">
                 
-                <a data-pjax href="https://maple-star.github.io/tag/NAdrjUGww/" class="postlink">
-                    <i class="fa fa-tag"></i> 随手笔记
+                <a data-pjax href="https://maple-star.github.io/tag/S18NC-kLn/" class="postlink">
+                    <i class="fa fa-tag"></i> C语言
                 </a>
                 
             </div>
@@ -1107,30 +1106,35 @@ menulist.eq(i).show();
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2 id="ptitle">单片机内存分配之 .data .bss .rodata段</h2>
+                <h2 id="ptitle">C语言 memcpy</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/</div>
+                <div id="pl" style="display:none">https://maple-star.github.io/post/c-yu-yan-memcpy/</div>
                 <div id="rootaddr" style="display:none">https://maple-star.github.io</div>
                 
             </div>
             <div class="text ">
-                <p>一、概念<br>
-.bss段</p>
-<pre><code>存放没有初始化或者初始化为0的全局变量或者静态局部变量。
-</code></pre>
-<p>.data段</p>
-<pre><code>存放初始化为非0，且非const属性的全局变量或者静态局部变量。
-</code></pre>
-<p>.rodata段</p>
-<pre><code>存放字符串和const常量，一般只放在ROM中。</code></pre>
+                <pre>
+<code>
+描述
+C 库函数 void *memcpy(void *str1, const void *str2, size_t n) 从存储区 str2 复制 n 个字节到存储区 str1。
 
+声明
+下面是 memcpy() 函数的声明。
+
+void *memcpy(void *str1, const void *str2, size_t n)
+参数
+str1 -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。
+str2 -- 指向要复制的数据源，类型强制转换为 void* 指针。
+n -- 要被复制的字节数。
+</code>
+</pre>
             </div>
             <hr style="width: 80%;">
             
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong></li>
-            <li><strong>原文链接：</strong>https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/</li>
+            <li><strong>原文链接：</strong>https://maple-star.github.io/post/c-yu-yan-memcpy/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
@@ -1138,8 +1142,23 @@ menulist.eq(i).show();
         
         <div id="otherpost">
             
-            <a  data-pjax class="prev-post-pc" href="https://maple-star.github.io/post/win-kuai-jie-jian/"  style="color: black;">
+            <a  data-pjax class="prev-post-pc" href="https://maple-star.github.io/post/c-yu-yan-for/"  style="color: black;">
                 <div id="ppcontainer">
+                    
+                    
+                    <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
+                    
+                    
+                    <h4 class="optitle">C语言for(;;)</h4>
+                </div>
+            </a>
+            <div class="prev-post">
+                上一篇 <a  data-pjax href="https://maple-star.github.io/post/c-yu-yan-for/">C语言for(;;)</a>
+            </div>
+            
+            
+            <a data-pjax class="next-post-pc" href="https://maple-star.github.io/post/win-kuai-jie-jian/"  style="color: black;">
+                <div id="npcontainer">
                     
                     
                     <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
@@ -1148,23 +1167,8 @@ menulist.eq(i).show();
                     <h4 class="optitle">win快捷键</h4>
                 </div>
             </a>
-            <div class="prev-post">
-                上一篇 <a  data-pjax href="https://maple-star.github.io/post/win-kuai-jie-jian/">win快捷键</a>
-            </div>
-            
-            
-            <a data-pjax class="next-post-pc" href="https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/"  style="color: black;">
-                <div id="npcontainer">
-                    
-                    
-                    <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
-                    
-                    
-                    <h4 class="optitle">   button[type=submit]</h4>
-                </div>
-            </a>
             <div class="next-post">
-                下一篇 <a  data-pjax href="https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/">   button[type=submit]</a>
+                下一篇 <a  data-pjax href="https://maple-star.github.io/post/win-kuai-jie-jian/">win快捷键</a>
             </div>
             
         </div>
