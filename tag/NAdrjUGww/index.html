@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
-    <meta name="description" content="驽马十驾，功在不舍。" />
-    <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
-    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>maple-star-说说</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/css/live2d.css">
+<link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
+<link rel="stylesheet" href="https://maple-star.github.io/media/css/font-awesome.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<title>maple-star</title>
+
 
 <body>
+
     <div id="content">
         <div class="nav-large">
             <div class="row">
@@ -993,12 +992,12 @@ menulist.eq(i).show();
         btstate = false;
       }
     }
-  </script> 
+  </script> </div>
                 <!----------- 移动端导航栏👆 ----------------->
-                </div>
 
                 <!-- ----------------左侧菜单栏html 👇-------------------------------------->
                 
+                <div>
                     <div id="tab1" class="tab">
                         <div class="bars">
                             <span></span>
@@ -1007,62 +1006,252 @@ menulist.eq(i).show();
                         </div>
                         <div class="close"></div>
                     </div>
-                <div class="col-md-1 col-lg-3"></div>
-                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="z-index: 11;">
-                    <div class="mobilebar">
-                        <img src="" alt="" class="plbg">
-<script>
-    var bgchoice = "link";
-    if(bgchoice=='default')
-        var plbgurl = "\media\images\custom-mobileplbgimage.png"
-    else  
-        var plbgurl = "https://z3.ax1x.com/2021/11/11/IdvwLj.png"
-    $(".plbg").attr("src",plbgurl);
-    $(".plbg").fadeIn(200);
-</script>
-                    </div>
-                    <div id="talks">
-    <div id="talkContainer">
+                    <div class="col-lg-3"></div>
+                        <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                            <link rel="stylesheet" href="https://maple-star.github.io/media/css/font-awesome.css">
+
+    <div style="display: none;">
+        
+            
+                
+                    <span name="plfeature">https://z3.ax1x.com/2021/11/11/IdvwLj.png</span>
+                
+                
+            <span name="pltitle">秒的时间单位</span>
+            <span name="pllink">https://maple-star.github.io/post/miao-de-shi-jian-dan-wei/</span>
+            <span name="pldate">2021-11-18</span>
+            <span name="plstats">1 min read</span>
+            
+                <span name="pltag" alt="秒的时间单位">随手笔记</span>
+                <span name="pltaglink" alt="秒的时间单位">https://maple-star.github.io/tag/NAdrjUGww/</span>
+            
+        
+            
+                
+                    <span name="plfeature">https://z3.ax1x.com/2021/11/11/IdvwLj.png</span>
+                
+                
+            <span name="pltitle">单片机内存分配之 .data .bss .rodata段</span>
+            <span name="pllink">https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/</span>
+            <span name="pldate">2021-11-14</span>
+            <span name="plstats">1 min read</span>
+            
+                <span name="pltag" alt="单片机内存分配之 .data .bss .rodata段">随手笔记</span>
+                <span name="pltaglink" alt="单片机内存分配之 .data .bss .rodata段">https://maple-star.github.io/tag/NAdrjUGww/</span>
+            
+        
+            
+                
+                    <span name="plfeature">https://z3.ax1x.com/2021/11/11/IdvwLj.png</span>
+                
+                
+            <span name="pltitle">   button[type=submit]</span>
+            <span name="pllink">https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/</span>
+            <span name="pldate">2021-11-14</span>
+            <span name="plstats">2 min read</span>
+            
+                <span name="pltag" alt="   button[type=submit]">随手笔记</span>
+                <span name="pltaglink" alt="   button[type=submit]">https://maple-star.github.io/tag/NAdrjUGww/</span>
+            
+        
     </div>
-    <button id="getmorebt" type="button" onclick="add()">获取更多</button>
+
+    
+    <div id="post-container" class="eleg-allpostscontainer">
+        <div v-for="post in postinfo" class="eleg-posts">
+            <div v-if="post.elegcontainer=='eleg-postcontainer-left'">
+                    <div :class="post.elegcontainer">
+                        <img :src="post.feature" alt="" :class="post.imgclass">
+                        
+                        <img class="eleg-swordsmen-left" src="https://maple-star.github.io/media/images/swordsmenleft.webp" alt="">
+                        
+                        <div class="eleg-info">
+                            <span class="eleg-title">{{post.title}}</span>
+                            <div style="margin-top:15px;">
+                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
+                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
+                            </div>
+                            <div style="margin-top:50px">
+                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='eleg-tags'>
+                        <div v-for="tag in post.tags">
+                            <div class="posttag">
+                                <a data-pjax href="" class="postlink eleg-postlink">
+                                    <i class="fa fa-tag"></i>{{tag}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div v-else>
+                    <div :class="post.elegcontainer">
+                        <div class="eleg-info">
+                            <span class="eleg-title">{{post.title}}</span>
+                            <div style="margin-top:15px;">
+                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
+                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
+                            </div>
+                            <div style="margin-top:50px">
+                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
+                            </div>
+                        </div>
+                        
+                        <img class="eleg-swordsmen" src="https://maple-star.github.io/media/images/swordsmen.webp" alt="">
+                        
+                        <img :src="post.feature" alt="" :class="post.imgclass">
+                    </div>
+                    <div class='eleg-tags'>
+                        <div v-for="tag in post.tags">
+                            <div class="posttag">
+                                <a data-pjax href="" class="postlink eleg-postlink">
+                                    <i class="fa fa-tag"></i>{{tag}}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+    var app2 = new Vue({
+      el: '#post-container',
+      mounted:function(){
+        this.getpostInfo();
+      },
+      methods:{
+         getpostInfo:function(){
+             var plflist = $("span[name='plfeature']");
+             var pltlist = $("span[name='pltitle']");
+             var plllist = $("span[name='pllink']");
+             var pldlist = $("span[name='pldate']");
+             var plslist = $("span[name='plstats']");
+             var pltaglist = $("span[name='pltag']");
+             for(var i=0;i<this.pagesize&&i<plflist.length;i++){
+                 var d = {};
+                 var tags = []
+                 d["feature"] = plflist.eq(i).html();
+                 d["title"] = pltlist.eq(i).html();
+                 d["link"] = plllist.eq(i).html();
+                 d["date"] = pldlist.eq(i).html();
+                 d['stats'] = plslist.eq(i).html();
+                 for(var j=0;j<pltaglist.length;j++){
+                     if(pltaglist.eq(j).attr('alt')==d['title'])
+                        tags.push(pltaglist.eq(j).html())
+                 }
+                 d["tags"] = tags;
+                 if(i%2==0)
+                 {
+                     d['elegcontainer'] = 'eleg-postcontainer-left';
+                     d['imgclass'] = 'eleg-img-left'
+                 }
+                 else{
+                    d['elegcontainer'] = 'eleg-postcontainer-right';
+                    d['imgclass'] = 'eleg-img-right' 
+                 }
+                 this.postinfo.push(d);
+             }
+         }
+      },
+      data: {
+        pagesize: "10",
+        postinfo:[],
+      }
+    })
+    </script>
+
+                            <div>
+                                <div class="pcpagi">
+    <div class="pagi">
+        <ul>
+            
+            <li><a style="width:100px">&nbsp;</a></li>
+            
+                    <li><a id="page1">1</a></li>
+                    <li><a id="page2" class="active">2</a></li>
+                    <li><a id="page3">3</a></li>
+                    
+            <li><a style="width:100px">&nbsp;</a></li>
+            
+                </ul>
+    </div>
 </div>
-<!-- 弹窗 -->
-<div id="myModal" class="modal">
-    <img class="modal-content" id="img01">
+
+<div id="pagination-prev" style="display:none"> 
 </div>
+<div id="pagination-next" style="display:none"> </div>
+
+<div class="pagination-container">
+      
+    
+</div>
+
+<script>
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
+        } else {
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
+        }
+    }
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
+    }
+</script>
+                                <div style="padding-bottom:10%"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
                 </div>
-                <div class="col-md-1 col-lg-2"></div>
                 <!-- ----------------左侧菜单栏html 👆-------------------------------------->
                 
-                <!--------------- 顶部菜单栏html👇--------->
+                <!------------------ 顶部菜单栏html👇--------->
                 
-                <!--------------- 顶部菜单栏html👆--------->
+                <!------------------ 顶部菜单栏html👆--------->
             </div>
-            <!-- aplayer播放器加载👇 -->
             
-            <!-- aplayer播放器加载👆 -->
         </div>
         <div id="bg">
         </div>
-        <!-- 背景图加载方式👇 -->
+        <!------- 背景图加载方式👇----- -->
         <div id="bgchoice" style="display: none">link
-            </div>
-            
-            <div id="bgurl" style="display:none">https://z3.ax1x.com/2021/11/11/IdvwLj.png</div>
-               
-        <!-- 背景图加载方式👆 -->
-    </div>
-    
-    <div id="landlord">
-        <div class="message" style="opacity:0"></div>
-        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
-    </div>
-    <div id="domainname" style="display:none">https://maple-star.github.io</div>
-</body>
+                    </div>
+                    
+                    <div id="bgurl" style="display:none">https://z3.ax1x.com/2021/11/11/IdvwLj.png</div>
+                       
+        </div>
+        <!------- 背景图加载方式👆 --------------->
+</div>
+</div>
 
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+        </div>
+        <div id="domainname" style="display:none">https://maple-star.github.io
+                </div>
+</body>
+</html>
 <!-------------------- live2d功能👇 --------------------------->
 
-<!-------------------- live2d功能👆 --------------------------->
+<!-------------------- live2d功能👆--------------------------->
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1084,16 +1273,4 @@ menulist.eq(i).show();
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
 
-        <script src="https://maple-star.github.io/media/js/index.js"></script>
-
-
-<!--------------------------- 说说功能👇------------------------- -->
-<script>
-
-    window.onload = function(){
-        aplayerbtnInit();
-        get();
-        add();
-    }
-</script>
-<!--------------------------- 说说功能👆------------------------- -->
+<script src="https://maple-star.github.io/media/js/index.js"></script>

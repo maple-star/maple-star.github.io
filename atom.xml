@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maple-star.github.io</id>
     <title>maple-star</title>
-    <updated>2021-12-18T05:37:44.656Z</updated>
+    <updated>2021-12-18T05:41:40.963Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maple-star.github.io"/>
     <link rel="self" href="https://maple-star.github.io/atom.xml"/>
@@ -18,11 +18,46 @@
         <updated>2021-12-17T12:40:32.000Z</updated>
     </entry>
     <entry>
+        <title type="html"><![CDATA[ESP8266串口烧录]]></title>
+        <id>https://maple-star.github.io/post/esp8266-chuan-kou-shao-lu/</id>
+        <link href="https://maple-star.github.io/post/esp8266-chuan-kou-shao-lu/">
+        </link>
+        <updated>2021-12-04T11:53:30.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[向上/向下取整  ]]></title>
+        <id>https://maple-star.github.io/post/xiang-shang-xiang-xia-qu-zheng/</id>
+        <link href="https://maple-star.github.io/post/xiang-shang-xiang-xia-qu-zheng/">
+        </link>
+        <updated>2021-11-22T04:50:51.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C 递归]]></title>
+        <id>https://maple-star.github.io/post/c-di-gui/</id>
+        <link href="https://maple-star.github.io/post/c-di-gui/">
+        </link>
+        <updated>2021-11-20T05:31:43.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[#define宏]]></title>
         <id>https://maple-star.github.io/post/define-hong/</id>
         <link href="https://maple-star.github.io/post/define-hong/">
         </link>
         <updated>2021-11-20T03:48:47.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[秒的时间单位]]></title>
+        <id>https://maple-star.github.io/post/miao-de-shi-jian-dan-wei/</id>
+        <link href="https://maple-star.github.io/post/miao-de-shi-jian-dan-wei/">
+        </link>
+        <updated>2021-11-18T02:49:42.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C语言for(;;)]]></title>
+        <id>https://maple-star.github.io/post/c-yu-yan-for/</id>
+        <link href="https://maple-star.github.io/post/c-yu-yan-for/">
+        </link>
+        <updated>2021-11-17T11:05:27.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[win快捷键]]></title>
@@ -32,45 +67,17 @@
         <updated>2021-11-15T10:57:13.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[基于Arduino环境下用ESP32搭建服务器]]></title>
-        <id>https://maple-star.github.io/post/ji-yu-arduino-huan-jing-xia-yong-esp32-da-jian-fu-wu-qi/</id>
-        <link href="https://maple-star.github.io/post/ji-yu-arduino-huan-jing-xia-yong-esp32-da-jian-fu-wu-qi/">
+        <title type="html"><![CDATA[单片机内存分配之 .data .bss .rodata段]]></title>
+        <id>https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/</id>
+        <link href="https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/">
         </link>
-        <updated>2021-11-12T00:48:54.000Z</updated>
+        <updated>2021-11-14T11:48:48.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[H7板子动态数码管]]></title>
-        <id>https://maple-star.github.io/post/h7-ban-zi-dong-tai-shu-ma-guan/</id>
-        <link href="https://maple-star.github.io/post/h7-ban-zi-dong-tai-shu-ma-guan/">
+        <title type="html"><![CDATA[   button[type=submit]]]></title>
+        <id>https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/</id>
+        <link href="https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/">
         </link>
-        <updated>2021-07-03T09:37:48.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[stm32]]></title>
-        <id>https://maple-star.github.io/post/stm32/</id>
-        <link href="https://maple-star.github.io/post/stm32/">
-        </link>
-        <updated>2021-05-21T10:37:53.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[C指针]]></title>
-        <id>https://maple-star.github.io/post/c-zhi-zhen/</id>
-        <link href="https://maple-star.github.io/post/c-zhi-zhen/">
-        </link>
-        <updated>2021-05-08T11:08:44.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[git基本命令]]></title>
-        <id>https://maple-star.github.io/post/git-ji-ben-ming-ling/</id>
-        <link href="https://maple-star.github.io/post/git-ji-ben-ming-ling/">
-        </link>
-        <updated>2021-04-23T08:07:06.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[AD]]></title>
-        <id>https://maple-star.github.io/post/ad/</id>
-        <link href="https://maple-star.github.io/post/ad/">
-        </link>
-        <updated>2021-04-19T12:40:02.000Z</updated>
+        <updated>2021-11-14T06:10:55.000Z</updated>
     </entry>
 </feed>
