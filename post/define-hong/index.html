@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C指针 | maple-star</title>
+<title>#define宏 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,9 +18,11 @@
 
 
 
-    <meta name="description" content="如果你想通过函数改变一个变量的值，就得用指针而不能用值传递。还有在很多时候变量,用指针来做形参，只需要传递一个地址就行，大大提高了效率。简单地说指针就是指向变量和对象的地址。
-初学必须了解你使用的是不是指针，什么指针，以及指针指向的地址。
-..." />
+    <meta name="description" content="#define命令还可以定义带参数的宏定义，用于实现某种特定的功能，其定义型式为：
+#define 宏名(参数列表) 字符串
+例如：
+#define Sum(a,b) a+b
+不过，由于C++增加了内联函数(inline)，实现起来比带参数..." />
     <meta name="keywords" content="C语言" />
   </head>
   <body>
@@ -98,36 +100,40 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C指针</h2>
-            <div class="post-date">2021-05-08</div>
-            
-              <div class="feature-container" style="background-image: url('https://maple-star.github.io/post-images/c-zhi-zhen.png')">
-              </div>
+            <h2 class="post-title">#define宏</h2>
+            <div class="post-date">2021-11-20</div>
             
             <div class="post-content" v-pre>
-              <p><img src="https://maple-star.github.io/post-images/1621065385204.png" alt="" loading="lazy">如果你想通过函数改变一个变量的值，就得用指针而不能用值传递。还有在很多时候变量,用指针来做形参，只需要传递一个地址就行，大大提高了效率。简单地说指针就是指向变量和对象的地址。<br>
-初学必须了解你使用的是不是指针，什么指针，以及指针指向的地址。<br>
-#include&lt;stdio.h&gt;<br>
-int main()<br>
-{<br>
-int a=2;<br>
-int <em>p;//从p处开始，先与</em>结合，所以p是一个指针，然后再与int结合，说明p是一个整数型指针<br>
-p=&amp;a;<br>
-printf(&quot;address of p is %d\n&quot;,p);//p指向的地址<br>
-printf(&quot;value at &amp;a is%d\n&quot;,&amp;a);//存放a的地址<br>
-printf(&quot;value at star p is %d\n&quot;,*p);//p地址存放值<br>
-printf(&quot;address of p+1 is%d\n&quot;,(p+1));//p的地址自加4，因为int型指针占用4个字节<br>
-printf(&quot;size of integer is %d bytes\n&quot;,sizeof(int));//显示int的字节<br>
-*p=3;//解引用修改a的值<br>
-printf(&quot;address of p is %d\n&quot;,p);//p指向的地址<br>
-printf(&quot;value at &amp;a is%d\n&quot;,&amp;a);//存放a的地址<br>
-printf(&quot;value at star p is %d\n&quot;,*p);//p地址存放值<br>
-printf(&quot;address of p+1 is%d\n&quot;,(p+1));//p的地址自加4，因为int型指针占用4个字节<br>
-printf(&quot;size of integer is %d bytes\n&quot;,sizeof(int));//显示int占用的字节<br>
-return 0；<br>
-}<br>
-<img src="https://maple-star.github.io/post-images/1620474778310.png" alt="" loading="lazy"><br>
-目前指针还在探索</p>
+              <p>#define命令还可以定义带参数的宏定义，用于实现某种特定的功能，其定义型式为：</p>
+<p>#define 宏名(参数列表) 字符串</p>
+<p>例如：</p>
+<pre><code>#define Sum(a,b) a+b</code></pre>
+<p>不过，由于C++增加了内联函数(inline)，实现起来比带参数的宏更方便，这样的宏在C++中已经很少使用了。<br>
+接下来看看宏都有什么好处：</p>
+<ol>
+<li>
+<p>提高了程序的可读性，同时也方便进行修改；</p>
+</li>
+<li>
+<p>提高程序的运行效率：使用带参的宏定义既可完成函数调用的功能，又能避免函数的出栈与入栈操作，减少系统开销，提高运行效率；</p>
+</li>
+<li>
+<p>宏是由预处理器处理的，通过字符串操作可以完成很多编译器无法实现的功能。比如##连接符。</p>
+</li>
+</ol>
+<p>（1） 用预处理指令#define 声明一个常数，用以表明1年中有多少秒（忽略闰年问题）</p>
+<p>答一:</p>
+  <pre><code>
+   #define SECONDS_PER_YEAR (60*60*24*365)UL
+   </code></pre>
+<p>我在这想看到几件事情：</p>
+<ol>
+<li>#define 语法的基本知识（例如：不能以分号结束，括号的使用，等等）</li>
+<li>懂得预处理器将为你计算常数表达式的值，因此，直接写出你是如何计算一年中有多少秒而不是计算出实际的值，是更清晰而没有代价的。</li>
+<li>意识到这个表达式将使一个16位机的整型数溢出, 因此要用到长整型符号L, 告诉编译器这个常数是长整型数。</li>
+<li>如果你在表达式中用到UL（表示无符号长整型），那么可能这就给面试者留下了很好的第一印象。记住第一印象很重要<br>
+出处：https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0</li>
+</ol>
 
             </div>
             
@@ -142,9 +148,9 @@ return 0；<br>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/git-ji-ben-ming-ling/">
+                <a href="https://maple-star.github.io/post/win-kuai-jie-jian/">
                   <h3 class="post-title">
-                    git基本命令
+                    win快捷键
                   </h3>
                 </a>
               </div>
