@@ -2,12 +2,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="#define命令还可以定义带参数的宏定义，用于实现某种特定的功能，其定义型式为：
-#define 宏名(参数列表) 字符串
-例如：
-#define Sum(a,b) a+b
-不过，由于C++增加了内联函数(inline)，实现起来比带参数..." />
-    <meta name="keywords" content="C语言" />
+    <meta name="description" content="int getSum(int a, int b) 
+{
+    int sum, carry; 
+    sum = a ^ b;  //异或这里可看做是相加但是不显现进位，比如5 ^ 3
+                 /*0 1 0 ..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://maple-star.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
     <!-- 代码渲染风格css -->
@@ -49,7 +49,7 @@
         });
     </script>
     
-    <title>#define宏</title>
+    <title>两个整数 a 和 b ,不使用运算符 + 和 - ​​​​​​​,计算并返回两整数之和。</title>
 
     <!-- 大纲索引css调整 -->
     
@@ -1096,56 +1096,45 @@ menulist.eq(i).show();
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2021-11-20</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2021-12-21</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
             <div class="posttag">
-                
-                <a data-pjax href="https://maple-star.github.io/tag/S18NC-kLn/" class="postlink">
-                    <i class="fa fa-tag"></i> C语言
-                </a>
                 
             </div>
         </div>
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2 id="ptitle">#define宏</h2>
+                <h2 id="ptitle">两个整数 a 和 b ,不使用运算符 + 和 - ​​​​​​​,计算并返回两整数之和。</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://maple-star.github.io/post/define-hong/</div>
+                <div id="pl" style="display:none">https://maple-star.github.io/post/liang-ge-zheng-shu-a-he-b-bu-shi-yong-yun-suan-fu-he-ji-suan-bing-fan-hui-liang-zheng-shu-zhi-he/</div>
                 <div id="rootaddr" style="display:none">https://maple-star.github.io</div>
                 
             </div>
             <div class="text ">
-                <p>#define命令还可以定义带参数的宏定义，用于实现某种特定的功能，其定义型式为：</p>
-<p>#define 宏名(参数列表) 字符串</p>
-<p>例如：</p>
-<pre><code>#define Sum(a,b) a+b</code></pre>
-<p>不过，由于C++增加了内联函数(inline)，实现起来比带参数的宏更方便，这样的宏在C++中已经很少使用了。<br>
-接下来看看宏都有什么好处：</p>
-<ol>
-<li>
-<p>提高了程序的可读性，同时也方便进行修改；</p>
-</li>
-<li>
-<p>提高程序的运行效率：使用带参的宏定义既可完成函数调用的功能，又能避免函数的出栈与入栈操作，减少系统开销，提高运行效率；</p>
-</li>
-<li>
-<p>宏是由预处理器处理的，通过字符串操作可以完成很多编译器无法实现的功能。比如##连接符。</p>
-</li>
-</ol>
-<p>（1） 用预处理指令#define 声明一个常数，用以表明1年中有多少秒（忽略闰年问题）</p>
-<p>答一:</p>
-  <pre><code>
-   #define SECONDS_PER_YEAR (60*60*24*365)UL
-   </code></pre>
-<p>我在这想看到几件事情：</p>
-<ol>
-<li>#define 语法的基本知识（例如：不能以分号结束，括号的使用，等等）</li>
-<li>懂得预处理器将为你计算常数表达式的值，因此，直接写出你是如何计算一年中有多少秒而不是计算出实际的值，是更清晰而没有代价的。</li>
-<li>意识到这个表达式将使一个16位机的整型数溢出, 因此要用到长整型符号L, 告诉编译器这个常数是长整型数。</li>
-<li>如果你在表达式中用到UL（表示无符号长整型），那么可能这就给面试者留下了很好的第一印象。记住第一印象很重要<br>
-出处：https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0</li>
-</ol>
+                <pre><code>int getSum(int a, int b) 
+{
+    int sum, carry; 
+    sum = a ^ b;  //异或这里可看做是相加但是不显现进位，比如5 ^ 3
+                 /*0 1 0 1
+                   0 0 1 1
+                 ------------
+                   0 1 1 0      
+              上面的如果看成传统的加法，不就是1+1=2，进1得0，但是这里没有显示进位出来，仅是相加，0+1或者是1+0都不用进位*/</code></pre>
+   <pre><code>  carry = (a & b) << 1;
+    
+                //相与为了让进位显现出来，比如5 & 3
+                /* 0 1 0 1
+                   0 0 1 1
+                 ------------
+                   0 0 0 1
+              上面的最低位1和1相与得1，而在二进制加法中，这里1+1也应该是要进位的，所以刚好吻合，但是这个进位1应该要再往前一位，所以左移一位*/</code></pre>
+   <pre ><code> if(carry != 0)  //经过上面这两步，如果进位不等于0，那么就是说还要把进位给加上去，所以用了尾递归，一直递归到进位是0。
+    {
+        return getSum(sum, carry);
+    }
+    return sum;
+}</code></pre>
 
             </div>
             <hr style="width: 80%;">
@@ -1153,7 +1142,7 @@ menulist.eq(i).show();
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong></li>
-            <li><strong>原文链接：</strong>https://maple-star.github.io/post/define-hong/</li>
+            <li><strong>原文链接：</strong>https://maple-star.github.io/post/liang-ge-zheng-shu-a-he-b-bu-shi-yong-yun-suan-fu-he-ji-suan-bing-fan-hui-liang-zheng-shu-zhi-he/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
@@ -1161,33 +1150,19 @@ menulist.eq(i).show();
         
         <div id="otherpost">
             
-            <a  data-pjax class="prev-post-pc" href="https://maple-star.github.io/post/c-di-gui/"  style="color: black;">
-                <div id="ppcontainer">
-                    
-                    
-                    <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
-                    
-                    
-                    <h4 class="optitle">C 递归</h4>
-                </div>
-            </a>
-            <div class="prev-post">
-                上一篇 <a  data-pjax href="https://maple-star.github.io/post/c-di-gui/">C 递归</a>
-            </div>
             
-            
-            <a data-pjax class="next-post-pc" href="https://maple-star.github.io/post/miao-de-shi-jian-dan-wei/"  style="color: black;">
+            <a data-pjax class="next-post-pc" href="https://maple-star.github.io/post/git-cang-ku-shang-chuan/"  style="color: black;">
                 <div id="npcontainer">
                     
                     
                     <img src="https://z3.ax1x.com/2021/11/11/IdvwLj.png" style="width: 100%;" class="opimg">
                     
                     
-                    <h4 class="optitle">秒的时间单位</h4>
+                    <h4 class="optitle">GIT仓库上传</h4>
                 </div>
             </a>
             <div class="next-post">
-                下一篇 <a  data-pjax href="https://maple-star.github.io/post/miao-de-shi-jian-dan-wei/">秒的时间单位</a>
+                下一篇 <a  data-pjax href="https://maple-star.github.io/post/git-cang-ku-shang-chuan/">GIT仓库上传</a>
             </div>
             
         </div>
