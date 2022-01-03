@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maple-star.github.io</id>
     <title>maple-star</title>
-    <updated>2021-12-30T04:46:23.109Z</updated>
+    <updated>2022-01-03T09:24:02.061Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maple-star.github.io"/>
     <link rel="self" href="https://maple-star.github.io/atom.xml"/>
     <subtitle>驽马十驾，功在不舍。</subtitle>
     <logo>https://maple-star.github.io/images/avatar.png</logo>
     <icon>https://maple-star.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, maple-star</rights>
+    <rights>All rights reserved 2022, maple-star</rights>
     <entry>
         <title type="html"><![CDATA[GIT仓库上传]]></title>
         <id>https://maple-star.github.io/post/git-cang-ku-shang-chuan/</id>
@@ -74,10 +74,10 @@
         <updated>2021-11-15T10:57:13.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[单片机内存分配之 .data .bss .rodata段]]></title>
-        <id>https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/</id>
-        <link href="https://maple-star.github.io/post/dan-pian-ji-nei-cun-fen-pei-zhi-data-bss-rodata-duan/">
+        <title type="html"><![CDATA[   button[type=submit]]]></title>
+        <id>https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/</id>
+        <link href="https://maple-star.github.io/post/lessstronggreaterhtml-buttontypesubmitlessstronggreater/">
         </link>
-        <updated>2021-11-14T11:48:48.000Z</updated>
+        <updated>2021-11-14T06:10:55.000Z</updated>
     </entry>
 </feed>
