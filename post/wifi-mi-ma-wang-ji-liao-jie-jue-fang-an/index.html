@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C语言for(;;) | maple-star</title>
+<title>wifi密码忘记了，解决方案。 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,14 @@
 
 
 
-    <meta name="description" content="当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。
-问三：
-嵌入式系统中经常要用到无限循环..." />
-    <meta name="keywords" content="C语言" />
+    <meta name="description" content="别人问：你家的wifi密码是多少？ 你： 槽，忘了…
+这种情况日常发生，该怎么办？
+可以利用电脑上的cmd查询
+额😅注意只能查到 曾经连接过的 wifi 的 名字和密码
+不是你大脑想到的那种，破解wifi密码。
+
+首先windows + ..." />
+    <meta name="keywords" content="随手笔记" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,38 +96,41 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C语言for(;;)</h2>
-            <div class="post-date">2021-11-17</div>
+            <h2 class="post-title">wifi密码忘记了，解决方案。</h2>
+            <div class="post-date">2022-01-06</div>
             
             <div class="post-content" v-pre>
-              <p>当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。<br>
-问三：<br>
-嵌入式系统中经常要用到无限循环，你怎么样用C编写死循环呢？</p>
-<p>答二: <br>
-这个问题用几个解决方案。我首选的方案是：</p>
-<pre><code>while(1)
-{
-
-}</code></pre>
-<p>一些程序员更喜欢如下方案：</p>
-<pre><code>for(;;)
-{
-
-}</code></pre>
-<p>这个实现方式让我为难，因为这个语法没有确切表达到底怎么回事。如果一个应试者给出这个作为答案，我将用这个作为一个机会去探究他们这样做的基本原理。如果他们的基本答案是：”我被教着这样做，但从没有想到过为什么。”这会给我留下一个坏印象。</p>
-<p>第三个方案是用 goto</p>
-<pre><code>Loop:
-…
-goto Loop;</code></pre>
-<p>应试者如给出上面的方案，这说明他可能是一个汇编语言程序员（这也许是好事）或者他是一个想进入新领域的BASIC/FORTRAN程序员。</p>
-<p>出处：<a href="https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0" target="_blank"> bilibili 韦东山</a></p>
+              <p>别人问：你家的wifi密码是多少？ 你： 槽，忘了…<br>
+这种情况日常发生，该怎么办？<br>
+可以利用电脑上的cmd查询<br>
+额😅注意只能查到 曾经连接过的 wifi 的 名字和密码<br>
+不是你大脑想到的那种，破解wifi密码。</p>
+<ol>
+<li>首先windows + R --&gt;  输入cmd   --&gt; 进入终端</li>
+</ol>
+<pre><cmd>netsh wlan show profiles</cmd></pre>
+<ol start="2">
+<li>
+<p>然后你就会看见很多，wifi 的名字</p>
+</li>
+<li>
+<p>然后复制你需要的wifi名字</p>
+</li>
+</ol>
+<pre><code>netsh wlan show profiles name = WiFi名称 key = clear</code></pre>
+<ol start="4">
+<li>然后找到关键内容</li>
+</ol>
+<pre><cmd> 关键内容              ：zxcvbnm</cmd></pre>
+<p>关键内容后面的是所查询Wifi密码<br>
+至此完成，撒花🌼🌹🌷🌻🌸</p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://maple-star.github.io/tag/S18NC-kLn/" class="tag">
-                    C语言
+                  <a href="https://maple-star.github.io/tag/NAdrjUGww/" class="tag">
+                    随手笔记
                   </a>
                 
               </div>
@@ -131,9 +138,9 @@ goto Loop;</code></pre>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-yu-yan-memcpy/">
+                <a href="https://maple-star.github.io/post/ifndef/">
                   <h3 class="post-title">
-                    C语言 memcpy
+                    #ifndef
                   </h3>
                 </a>
               </div>

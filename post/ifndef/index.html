@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C语言for(;;) | maple-star</title>
+<title>#ifndef | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,9 +18,8 @@
 
 
 
-    <meta name="description" content="当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。
-问三：
-嵌入式系统中经常要用到无限循环..." />
+    <meta name="description" content="#ifndef是"if not defined"的简写，是宏定义的一种，它是可以根据是否已经定义了一个变量来进行分支选择，一般用于调试等。实际上确切的说这应该是预处理功能中三种（宏定义，文件包含和条件编译）中的第三种——条件编译。
+条件指示..." />
     <meta name="keywords" content="C语言" />
   </head>
   <body>
@@ -92,31 +91,26 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C语言for(;;)</h2>
-            <div class="post-date">2021-11-17</div>
+            <h2 class="post-title">#ifndef</h2>
+            <div class="post-date">2022-01-04</div>
             
             <div class="post-content" v-pre>
-              <p>当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。<br>
-问三：<br>
-嵌入式系统中经常要用到无限循环，你怎么样用C编写死循环呢？</p>
-<p>答二: <br>
-这个问题用几个解决方案。我首选的方案是：</p>
-<pre><code>while(1)
-{
+              <p style="color=Blue">#ifndef是"if not defined"的简写，是宏定义的一种，</p>它是可以根据是否已经定义了一个变量来进行分支选择，一般用于调试等。实际上确切的说这应该是预处理功能中三种（宏定义，文件包含和条件编译）中的第三种——条件编译。
+<p><strong>条件指示符#ifndef的最主要目的是防止头文件的重复包含和编译。</strong></p>
+<pre><code>#ifndef x
 
-}</code></pre>
-<p>一些程序员更喜欢如下方案：</p>
-<pre><code>for(;;)
-{
+　　//先测试x是否被宏定义过
 
-}</code></pre>
-<p>这个实现方式让我为难，因为这个语法没有确切表达到底怎么回事。如果一个应试者给出这个作为答案，我将用这个作为一个机会去探究他们这样做的基本原理。如果他们的基本答案是：”我被教着这样做，但从没有想到过为什么。”这会给我留下一个坏印象。</p>
-<p>第三个方案是用 goto</p>
-<pre><code>Loop:
-…
-goto Loop;</code></pre>
-<p>应试者如给出上面的方案，这说明他可能是一个汇编语言程序员（这也许是好事）或者他是一个想进入新领域的BASIC/FORTRAN程序员。</p>
-<p>出处：<a href="https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0" target="_blank"> bilibili 韦东山</a></p>
+　　#define x
+
+　　//如果没有宏定义下面就宏定义x并编译下面的语句
+
+　　...
+
+　　#endif
+
+　　//如果已经定义了则编译#endif后面的语句</code></pre>
+<p>条件编译当然也可以用条件语句来实现， 但是用条件语句将会对整个源程序进行编译，生成的目标代码程序很长，而采用条件编译，则根据条件只编译其中的程序段1或程序段2，生成的目标程序较短。如果条件选择的程序段很长，采用条件编译的方法是十分必要的。</p>
 
             </div>
             
@@ -131,9 +125,9 @@ goto Loop;</code></pre>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-yu-yan-memcpy/">
+                <a href="https://maple-star.github.io/post/ao-qia-mu-ti-dao-yuan-ze/">
                   <h3 class="post-title">
-                    C语言 memcpy
+                    奥卡姆剃刀原则
                   </h3>
                 </a>
               </div>

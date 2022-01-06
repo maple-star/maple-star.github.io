@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C语言for(;;) | maple-star</title>
+<title>进位加法 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,9 +18,9 @@
 
 
 
-    <meta name="description" content="当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。
-问三：
-嵌入式系统中经常要用到无限循环..." />
+    <meta name="description" content="补码是用来解决负数在计算机中的表示问题的。正数的补码就是其本身；负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)。
+按位与 ：有零则零，全一出一； 清零作用，进位作用
+按位异或：相同为零，不..." />
     <meta name="keywords" content="C语言" />
   </head>
   <body>
@@ -92,32 +92,29 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C语言for(;;)</h2>
-            <div class="post-date">2021-11-17</div>
+            <h2 class="post-title">进位加法</h2>
+            <div class="post-date">2022-01-02</div>
             
             <div class="post-content" v-pre>
-              <p>当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。<br>
-问三：<br>
-嵌入式系统中经常要用到无限循环，你怎么样用C编写死循环呢？</p>
-<p>答二: <br>
-这个问题用几个解决方案。我首选的方案是：</p>
-<pre><code>while(1)
-{
-
+              <p>补码是用来解决负数在计算机中的表示问题的。正数的补码就是其本身；负数的补码是在其原码的基础上, 符号位不变, 其余各位取反, 最后+1. (即在反码的基础上+1)。<br>
+按位与 ：有零则零，全一出一； 清零作用，进位作用<br>
+按位异或：相同为零，不同为一；相加不进位作用</p>
+<p>3-&gt;(b)0011<br>
+2-&gt;(b)0010</p>
+<p>(b)0011&amp;(b)0010 =&gt;(b)0010&lt;&lt; 1 =&gt;(b)0100<br>
+(b)0011^(b)0010 =&gt;0001</p>
+<p>(b)0100&amp;(b)0001 =&gt;(b)0000&lt;&lt; 1 =&gt;(b)0000<br>
+(b)0100^(b)0001 =&gt;(b)0101-&gt;5</p>
+<pre><code>int getSum(int a, int b){
+ int val;
+ while(a!=0)
+ {
+    val=(unsigned int)(a&b)<<1;//通过按位与检测进位，为防止左移后 不能在int类型中表示 强转为无符号整型
+    b=a^b;//通过异或相加
+    a=val;
+ }
+ return b;
 }</code></pre>
-<p>一些程序员更喜欢如下方案：</p>
-<pre><code>for(;;)
-{
-
-}</code></pre>
-<p>这个实现方式让我为难，因为这个语法没有确切表达到底怎么回事。如果一个应试者给出这个作为答案，我将用这个作为一个机会去探究他们这样做的基本原理。如果他们的基本答案是：”我被教着这样做，但从没有想到过为什么。”这会给我留下一个坏印象。</p>
-<p>第三个方案是用 goto</p>
-<pre><code>Loop:
-…
-goto Loop;</code></pre>
-<p>应试者如给出上面的方案，这说明他可能是一个汇编语言程序员（这也许是好事）或者他是一个想进入新领域的BASIC/FORTRAN程序员。</p>
-<p>出处：<a href="https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0" target="_blank"> bilibili 韦东山</a></p>
-
             </div>
             
               <div class="tag-container">
@@ -131,9 +128,9 @@ goto Loop;</code></pre>
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-yu-yan-memcpy/">
+                <a href="https://maple-star.github.io/post/git-cang-ku-shang-chuan/">
                   <h3 class="post-title">
-                    C语言 memcpy
+                    GIT仓库上传
                   </h3>
                 </a>
               </div>
