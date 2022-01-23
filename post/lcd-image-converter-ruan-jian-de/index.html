@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C语言for(;;) | maple-star</title>
+<title>lcd-image-converter软件的 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,10 @@
 
 
 
-    <meta name="description" content="当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。
-问三：
-嵌入式系统中经常要用到无限循环..." />
-    <meta name="keywords" content="C语言" />
+    <meta name="description" content="您可以在 OLED 显示屏上显示 128×64 位图单色图像。
+首先，使用成像程序调整照片或图片的大小并将其保存为单色位图。如果您使用的是 Windows PC，则可以使用 Paint。
+然后，使用 Image to C Array 转换器..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,48 +92,46 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C语言for(;;)</h2>
-            <div class="post-date">2021-11-17</div>
+            <h2 class="post-title">lcd-image-converter软件的</h2>
+            <div class="post-date">2022-01-22</div>
             
             <div class="post-content" v-pre>
-              <p>当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。<br>
-问三：<br>
-嵌入式系统中经常要用到无限循环，你怎么样用C编写死循环呢？</p>
-<p>答二: <br>
-这个问题用几个解决方案。我首选的方案是：</p>
-<pre><code>while(1)
-{
-
-}</code></pre>
-<p>一些程序员更喜欢如下方案：</p>
-<pre><code>for(;;)
-{
-
-}</code></pre>
-<p>这个实现方式让我为难，因为这个语法没有确切表达到底怎么回事。如果一个应试者给出这个作为答案，我将用这个作为一个机会去探究他们这样做的基本原理。如果他们的基本答案是：”我被教着这样做，但从没有想到过为什么。”这会给我留下一个坏印象。</p>
-<p>第三个方案是用 goto</p>
-<pre><code>Loop:
-…
-goto Loop;</code></pre>
-<p>应试者如给出上面的方案，这说明他可能是一个汇编语言程序员（这也许是好事）或者他是一个想进入新领域的BASIC/FORTRAN程序员。</p>
-<p>出处：<a href="https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0" target="_blank"> bilibili 韦东山</a></p>
+              <p>您可以在 OLED 显示屏上显示 128×64 位图单色图像。</p>
+<p>首先，使用成像程序调整照片或图片的大小并将其保存为单色位图。如果您使用的是 Windows PC，则可以使用 Paint。<br>
+然后，使用 Image to C Array 转换器将图像转换为数组。我用过LCD Image Converter。</p>
+<p>运行程序并从新图像开始。转到图像&gt;导入并选择您之前创建的位图图像。<br>
+<strong>1、选择创建图像<br>
+<img src="https://maple-star.github.io/post-images/1642845271786.png" alt="" loading="lazy"><br>
+2、输入图像名称<br>
+<img src="https://maple-star.github.io/post-images/1642845296355.png" alt="" loading="lazy"><br>
+3、导入BMP图片<br>
+<img src="https://maple-star.github.io/post-images/1642845338282.png" alt="" loading="lazy"><br>
+4、点击Options &gt; Conversion<br>
+<img src="https://maple-star.github.io/post-images/1642845344697.png" alt="" loading="lazy"><br>
+5、<br>
+单色，阈值抖动<br>
+主扫描方向：从上到下<br>
+线扫描方向：正向<br>
+<img src="https://maple-star.github.io/post-images/1642845351574.png" alt="" loading="lazy"><br>
+6、<br>
+拆分为行<br>
+大小： 8位<br>
+字节顺序： Little-Endian<br>
+<img src="https://maple-star.github.io/post-images/1642845355282.png" alt="" loading="lazy"><br>
+7、视图<br>
+<img src="https://maple-star.github.io/post-images/1642845445831.png" alt="" loading="lazy"><br>
+8、调整大小<br>
+<img src="https://maple-star.github.io/post-images/1642845454344.png" alt="" loading="lazy"><br>
+接着，单击OK。最后，在主菜单中，转到File &gt; Convert。应保存一个带有.c扩展名的新文件。该文件包含图像的 C 数组。使用文本编辑器打开该文件，然后复制数组。</p>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://maple-star.github.io/tag/S18NC-kLn/" class="tag">
-                    C语言
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-yu-yan-memcpy/">
+                <a href="https://maple-star.github.io/post/lan-ya-bi-ji/">
                   <h3 class="post-title">
-                    C语言 memcpy
+                    蓝牙笔记
                   </h3>
                 </a>
               </div>

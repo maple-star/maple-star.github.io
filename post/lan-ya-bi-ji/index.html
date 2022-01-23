@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>C语言for(;;) | maple-star</title>
+<title>蓝牙笔记 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,9 @@
 
 
 
-    <meta name="description" content="当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。
-问三：
-嵌入式系统中经常要用到无限循环..." />
-    <meta name="keywords" content="C语言" />
+    <meta name="description" content="蓝牙与Wi-Fi优势对比
+蓝牙有更低的功耗、小体积、低成本，适用于几台设备之间的短距离数据传输；Wi-Fi的特点是高带宽、长距离、更多的连接设备数目，适用于大规模、大范围的数据传输和信号覆盖。但随着物联网的普及，蓝牙与Wi-Fi相继升级，蓝..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,48 +91,23 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">C语言for(;;)</h2>
-            <div class="post-date">2021-11-17</div>
+            <h2 class="post-title">蓝牙笔记</h2>
+            <div class="post-date">2022-01-09</div>
             
             <div class="post-content" v-pre>
-              <p>当我们查看资料或做题时，我们会发现for循环中有这种形式for( ; ; )，那我们怎么理解呢？其实我们可以这样看,就是没有任何限制，就是可以无限次循环，如果循环体中没有结束条件，那么循环将不会停止。<br>
-问三：<br>
-嵌入式系统中经常要用到无限循环，你怎么样用C编写死循环呢？</p>
-<p>答二: <br>
-这个问题用几个解决方案。我首选的方案是：</p>
-<pre><code>while(1)
-{
-
-}</code></pre>
-<p>一些程序员更喜欢如下方案：</p>
-<pre><code>for(;;)
-{
-
-}</code></pre>
-<p>这个实现方式让我为难，因为这个语法没有确切表达到底怎么回事。如果一个应试者给出这个作为答案，我将用这个作为一个机会去探究他们这样做的基本原理。如果他们的基本答案是：”我被教着这样做，但从没有想到过为什么。”这会给我留下一个坏印象。</p>
-<p>第三个方案是用 goto</p>
-<pre><code>Loop:
-…
-goto Loop;</code></pre>
-<p>应试者如给出上面的方案，这说明他可能是一个汇编语言程序员（这也许是好事）或者他是一个想进入新领域的BASIC/FORTRAN程序员。</p>
-<p>出处：<a href="https://www.bilibili.com/read/cv7132601?spm_id_from=333.999.0.0" target="_blank"> bilibili 韦东山</a></p>
+              <p>蓝牙与Wi-Fi优势对比</p>
+<p>蓝牙有更低的功耗、小体积、低成本，适用于几台设备之间的短距离数据传输；Wi-Fi的特点是高带宽、长距离、更多的连接设备数目，适用于大规模、大范围的数据传输和信号覆盖。但随着物联网的普及，蓝牙与Wi-Fi相继升级，蓝牙升级到5版本，提高了带宽和传输范围；Wi-Fi推“Wi-Fi HaLow”，降低功耗延长电池续航。可以看出，这两者重点升级的方向都是对方所擅长的，也意味着它们将在消费级和企业级的物联网市场正面竞争。</p>
+<p>蓝牙 Mesh 与 Wi-Fi 传输范围对比</p>
+<p>Wi-Fi 的一大缺陷就是有距离限制，就是说一旦离开这个区域，你的设备就失去用武之地。除此之外，Wi-Fi 还有耗电问题，就手机而言，算是把屏幕关闭，耗电量也非常大。</p>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://maple-star.github.io/tag/S18NC-kLn/" class="tag">
-                    C语言
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-yu-yan-memcpy/">
+                <a href="https://maple-star.github.io/post/wifi-mi-ma-wang-ji-liao-jie-jue-fang-an/">
                   <h3 class="post-title">
-                    C语言 memcpy
+                    wifi密码忘记了，解决方案。
                   </h3>
                 </a>
               </div>
