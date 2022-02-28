@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>wifi密码忘记了，解决方案。 | maple-star</title>
+<title>米勒-拉宾素性检验(MillerRabbin)算法详解 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,12 @@
 
 
 
-    <meta name="description" content="别人问：你家的wifi密码是多少？ 你： 槽，忘了…
-这种情况日常发生，该怎么办？
-可以利用电脑上的cmd查询
-额😅注意只能查到 曾经连接过的 wifi 的 名字和密码
-不是你大脑想到的那种，破解wifi密码。
-
-首先windows + ..." />
-    <meta name="keywords" content="随手笔记" />
+    <meta name="description" content="简单点说就是找质数的公式
+米勒-拉宾(MillerRabbin)素性测试算法是一个高效判断素数的方法
+首先 在学习米勒拉宾素性测试涉及到两个定理  先放出来  下文会详细解释
+1、费马小定理： 如果p为质数   (在mod p 的情况下)
+..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -96,51 +94,77 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">wifi密码忘记了，解决方案。</h2>
-            <div class="post-date">2022-01-06</div>
+            <h2 class="post-title">米勒-拉宾素性检验(MillerRabbin)算法详解</h2>
+            <div class="post-date">2022-01-30</div>
             
             <div class="post-content" v-pre>
-              <p>别人问：你家的wifi密码是多少？ 你： 槽，忘了…<br>
-这种情况日常发生，该怎么办？<br>
-可以利用电脑上的cmd查询<br>
-额😅注意只能查到 曾经连接过的 wifi 的 名字和密码<br>
-不是你大脑想到的那种，破解wifi密码。</p>
-<ol>
-<li><strong>首先windows + R --&gt;  输入cmd   --&gt; 进入终端</strong></li>
-</ol>
-<pre><code> 输入：netsh wlan show profiles</code></pre>
-<ol start="2">
-<li>
-<p><strong>然后你就会看见很多，wifi 的名字</strong></p>
-</li>
-<li>
-<p><strong>然后复制你需要的wifi名字</strong></p>
-</li>
-</ol>
-<pre><code>输入：netsh wlan show profiles name = WiFi名称 key = clear</code></pre>
-<ol start="4">
-<li><strong>然后找到关键内容</strong></li>
-</ol>
-<pre><code> 关键内容              ：zxcvbnm</code></pre>
-<p>关键内容后面的是所查询Wifi密码</p>
-<p>至此完成，撒花🌼🌹🌷🌻🌸</p>
+              <p><strong>简单点说就是找质数的公式<br>
+米勒-拉宾(MillerRabbin)素性测试算法是一个高效判断素数的方法<br>
+首先 在学习米勒拉宾素性测试涉及到两个定理  先放出来  下文会详细解释</p>
+<p>1、费马小定理： 如果p为质数  <img src="https://maple-star.github.io/post-images/1643549514261.jpg" alt="" loading="lazy"> (在mod p 的情况下)</p>
+<p>2、对于任意一个小于p的正整数x，发现1（模p）的非平凡平方根存在，则说明p是合数</pre><br>
+<strong>参考代码😅</strong></p>
+<pre><code>#include<stdio.h>
+#include<iostream>
+#include<algorithm>
+using namespace std;
+typedef long long ll;
+ll mul(ll a,ll b,ll mod){//高精度
+    a%=mod;
+    b%=mod;
+    ll c=(long double)a*b/mod;
+    ll ans=a*b-c*mod;
+    return (ans%mod+mod)%mod;
+}
+ll pow_mod(ll x,ll n,ll mod){//快速幂
+    ll res=1;
+    while(n){
+        if(n&1)
+        res=mul(res,x,mod);
+        x=mul(x,x,mod);
+        n>>=1;
+    }
+    return (res+mod)%mod;
+}
+bool Miller_Rabbin(ll a,ll n){
+    
+    //把n-1  转化成 (2^r)*d
+    ll s=n-1,r=0;
+    while((s&1)==0){
+        s>>=1;r++;
+    }
+    
+    //算出 2^d  存在 k 里
+    ll k=pow_mod(a,s,n);
+    
+    //二次探测  看变化过程中是不是等于1 或 n-1
+    if(k==1)return true;
+    for(int i=0;i<r;i++,k=k*k%n){
+        if(k==n-1)return true;
+    }
+    return false;
+}
+bool isprime(ll n){
+    //这里可以随机取a值进行探测  探测次数可以自己定
+    //我写了几个我喜欢用的探测数据
+    ll times=7;
+    ll prime[100]={2,3,5,7,11,233,331};
+    for(int i=0;i<times;i++){
+        if(n==prime[i])return true;
+        if(Miller_Rabbin(prime[i],n)==false)return false;//未通过探测 返回假
+    }
+    return true;//所有探测结束 返回真
+}
+</code></pre>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://maple-star.github.io/tag/NAdrjUGww/" class="tag">
-                    随手笔记
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/ifndef/">
+                <a href="https://maple-star.github.io/post/lcd-image-converter-ruan-jian-de/">
                   <h3 class="post-title">
-                    #ifndef
+                    LCD Image Converter的使用
                   </h3>
                 </a>
               </div>
