@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://maple-star.github.io</id>
     <title>maple-star</title>
-    <updated>2022-02-28T04:11:02.637Z</updated>
+    <updated>2022-03-03T01:25:23.019Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://maple-star.github.io"/>
     <link rel="self" href="https://maple-star.github.io/atom.xml"/>
@@ -10,13 +10,6 @@
     <logo>https://maple-star.github.io/images/avatar.png</logo>
     <icon>https://maple-star.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, maple-star</rights>
-    <entry>
-        <title type="html"><![CDATA[米勒-拉宾素性检验(MillerRabbin)算法详解]]></title>
-        <id>https://maple-star.github.io/post/mi-le-la-bin-su-xing-jian-yan-millerrabbinsuan-fa-xiang-jie/</id>
-        <link href="https://maple-star.github.io/post/mi-le-la-bin-su-xing-jian-yan-millerrabbinsuan-fa-xiang-jie/">
-        </link>
-        <updated>2022-01-30T13:18:50.000Z</updated>
-    </entry>
     <entry>
         <title type="html"><![CDATA[LCD Image Converter的使用]]></title>
         <id>https://maple-star.github.io/post/lcd-image-converter-ruan-jian-de/</id>
@@ -79,5 +72,12 @@
         <link href="https://maple-star.github.io/post/xiang-shang-xiang-xia-qu-zheng/">
         </link>
         <updated>2021-11-22T04:50:51.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[C 递归]]></title>
+        <id>https://maple-star.github.io/post/c-di-gui/</id>
+        <link href="https://maple-star.github.io/post/c-di-gui/">
+        </link>
+        <updated>2021-11-20T05:31:43.000Z</updated>
     </entry>
 </feed>
