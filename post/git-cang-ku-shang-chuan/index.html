@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://maple-star.github.io/favicon.ico?v=1646270731763">
+<link rel="shortcut icon" href="https://maple-star.github.io/favicon.ico?v=1646301235139">
 <link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
 
 
@@ -33,7 +33,7 @@ g..." />
   <div class="top-container" data-aos="fade-right">
     <div class="top-header-container">
       <a class="site-title-container" href="https://maple-star.github.io">
-        <img src="https://maple-star.github.io/images/avatar.png?v=1646270731763" class="site-logo">
+        <img src="https://maple-star.github.io/images/avatar.png?v=1646301235139" class="site-logo">
         <h1 class="site-title">maple-star</h1>
       </a>
       <div class="menu-btn" @click="menuVisible = !menuVisible">
@@ -106,13 +106,14 @@ git add .          小数点意为添加文件夹下的所有文件，也可以�
 第三步： 将暂存区的文件提交到本地仓库<br>
 git commit -m &quot;注释说明&quot;       注释作用是告诉下载和浏览的用户你这次提交代码所改变的地方<br>
 第四步： 在 gitee(github)上新建远程仓库<br>
-第五步：将本地代码仓库关联到gitee上<br>
-git remote add origin 仓库地址</p>
+第五步：将本地代码仓库关联到gitee上</p>
+<pre>git remote add origin 仓库地址</pre>
 <pre><code>如果报错：fatal:remote origin already exists
-解决办法 1.先输入
-                         git remote rm origin
-                2.再输入
-                          git remote add origin 仓库地址<></pre></code>
+解决办法
+1.先输入
+git remote rm origin
+2.再输入
+git remote add origin 仓库地址<></pre></code>
 <p>如果不是检查前面配置<br>
 第六步：将代码由本地仓库上传到giee(github)远程仓库</p>
 <pre><code>1.如果你的远程库不为空必须做这一步，负责会出错

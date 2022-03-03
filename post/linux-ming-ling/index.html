@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>     html代码显示 | maple-star</title>
+<title>Linux命令 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,28 @@
 
 
 
-    <meta name="description" content="   html代码显示&lt;xmp&gt;&lt;/xmp&gt;
+    <meta name="description" content="linux VIM基本命令
+常用的 linux基本命令
 
-button的语义很明确，就是一个按钮不含数据，作用就是用户交互。但它也有type和value属性。 type的默认值是submit，所以点击一个button会引起表单..." />
-    <meta name="keywords" content="随手笔记" />
+
+
+命令
+功能
+
+
+
+
+su - root
+实现普通用户切换root用户
+
+
+lsusb
+查看所有的usb设备
+
+
+ls -l /dev/ttyUSB*
+查看当前USB设备使用的串口..." />
+    <meta name="keywords" content="LINUX" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,50 +110,145 @@ button的语义很明确，就是一个按钮不含数据，作用就是用户�
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">     html代码显示</h2>
-            <div class="post-date">2021-11-14</div>
+            <h2 class="post-title">Linux命令</h2>
+            <div class="post-date">2022-03-03</div>
             
             <div class="post-content" v-pre>
-              <pre><code>   html代码显示&lt;xmp&gt;&lt;/xmp&gt;
-</code></pre>
-<p>button的语义很明确，就是一个按钮不含数据，作用就是用户交互。但它也有type和value属性。 type的默认值是submit，所以点击一个button会引起表单提交：</p>
-<pre>
-<xmp>
-<form>
-  <input name='key'>
-  <button>确定</button>
-</form>
-</xmp>
-</pre>
-<p>注意:如果你在做IE浏览器的兼容，请记住button[type]在IE中的默认值是button，这意味着它只是一个按钮而不会引发表单提交。</p>
-<p>另外，我们通过设置元素内容的方式来指定button的文字。这意味着button是一个容器控件， 其中可以包含任意的HTML标签，同时样式更容易定制。这也是为什么Bootstrap 文档中大量使用button作为示例的原因之一。</p>
-<p>但是，button会很乱。button可以设置name和value。提交表单时，value会被作为表单数据提交给服务器。 在IE中，甚至会把button开始与结束标签之间的内容作为name对应的值提交给服务器。button和input的相似还不止于此，button也可以设置type=reset，此时点击按钮会导致表单被重置（这还挺有用的）。 w3school给出了如下的示例：</p>
-<pre>
-<xmp>
-<form action="form_action.asp" method="get">
-  First name: <input type="text" name="fname" />
-  Last name: <input type="text" name="lname" />
-  <button name="val" type="submit" value="Submit">Submit</button>
-  <button name="val" type="reset" value="Reset">Reset</button>
-</form>
-</xmp>
-</pre>
-<p>对于button就不多说了，建议用button作为交互用的按钮，来提交表单。同时请注意设置type=submit来兼容IE。</p>
-<pre>
-<xmp>
-        <form method="get">
-        <button class="box" name="val" type="submit" value="1">ON</button>
-        <button class="box" name="val" type="submit" value="0">OFF</button>
-       </form>
-     </xmp>
-</pre>
+              <h2 id="linux-vim基本命令">linux VIM基本命令</h2>
+<h4 id="常用的-linux基本命令">常用的 linux基本命令</h4>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>su - root</td>
+<td>实现普通用户切换root用户</td>
+</tr>
+<tr>
+<td>lsusb</td>
+<td>查看所有的usb设备</td>
+</tr>
+<tr>
+<td>ls -l /dev/ttyUSB*</td>
+<td>查看当前USB设备使用的串口</td>
+</tr>
+<tr>
+<td>xdg-open</td>
+<td>打开各种文件方法</td>
+</tr>
+<tr>
+<td>cd home/</td>
+<td>进入home目录</td>
+</tr>
+<tr>
+<td>ls</td>
+<td>查看当前目录下的文件</td>
+</tr>
+<tr>
+<td>exit</td>
+<td>退出当前状态</td>
+</tr>
+<tr>
+<td>mkdir</td>
+<td>新建文件夹</td>
+</tr>
+<tr>
+<td>touch</td>
+<td>新建文件</td>
+</tr>
+<tr>
+<td>rmdir file</td>
+<td>删除文件夹</td>
+</tr>
+<tr>
+<td>rm -r</td>
+<td>删除带有文件的文件夹</td>
+</tr>
+<tr>
+<td>rm file</td>
+<td>删除文件</td>
+</tr>
+<tr>
+<td>nano file.txt</td>
+<td>打开nano文本编辑器</td>
+</tr>
+<tr>
+<td>ctrl+x</td>
+<td>关闭nano文本编辑器</td>
+</tr>
+</tbody>
+</table>
+<h4 id="常用的vim基本命令">常用的Vim基本命令</h4>
+<p><strong>首先你要进入Vim编辑器</strong></p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>vim写入代码功能</td>
+</tr>
+<tr>
+<td>esc</td>
+<td>退出vim写入代码功能</td>
+</tr>
+<tr>
+<td>shift+:</td>
+<td>打开vim终端</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>保存代码文件</td>
+</tr>
+<tr>
+<td>:p</td>
+<td>退出Vim编辑器</td>
+</tr>
+<tr>
+<td>gcc file.c -o file</td>
+<td>生成可执行文件</td>
+</tr>
+<tr>
+<td>./file</td>
+<td>运行可执行文件</td>
+</tr>
+</tbody>
+</table>
+<h4 id="linux常用快捷键">linux常用快捷键</h4>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打开命令终端</td>
+<td>ctrl+alt+t</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<figure data-type="image" tabindex="1"><img src="https://www.runoob.com/wp-content/uploads/2015/10/vi-vim-cheat-sheet-sch1.gif" alt="image" loading="lazy"></figure>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://maple-star.github.io/tag/NAdrjUGww/" class="tag">
-                    随手笔记
+                  <a href="https://maple-star.github.io/tag/D-J1nMg_y/" class="tag">
+                    LINUX
                   </a>
                 
               </div>
@@ -143,9 +256,9 @@ button的语义很明确，就是一个按钮不含数据，作用就是用户�
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-zhi-zhen/">
+                <a href="https://maple-star.github.io/post/pycharm-pei-zhi-cuo-wu/">
                   <h3 class="post-title">
-                    C指针
+                    Pycharm配置错误
                   </h3>
                 </a>
               </div>
