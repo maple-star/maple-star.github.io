@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>C语言头文件规范 | maple-star</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://maple-star.github.io/favicon.ico?v=1650851086456">
+<link rel="stylesheet" href="https://maple-star.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="C语言编程规范
+1、头文件
+1.头文件应当职责单一，切忌依赖复杂；
+    头文件过于复杂、职责过多依赖过于复杂是导致编译时间过长的主要原因。
+
+
+
+头文件应向稳定的方向包含；
+头文件的包含关系是一种依赖，一般来说，应当让不稳定的模块依赖稳..." />
+    <meta name="keywords" content="C语言" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://maple-star.github.io">
+        <img src="https://maple-star.github.io/images/avatar.png?v=1650851086456" class="site-logo">
+        <h1 class="site-title">maple-star</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="https://maple-star.github.io" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      驽马十驾，功在不舍。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://maple-star.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">C语言头文件规范</h2>
+            <div class="post-date">2022-04-25</div>
+            
+            <div class="post-content" v-pre>
+              <h1 id="c语言编程规范">C语言编程规范</h1>
+<h3 id="1-头文件">1、头文件</h3>
+<p>1.<strong>头文件应当职责单一，切忌依赖复杂；</strong></p>
+<pre><code>    头文件过于复杂、职责过多依赖过于复杂是导致编译时间过长的主要原因。
+</code></pre>
+<ol start="2">
+<li>
+<p><strong>头文件应向稳定的方向包含；</strong></p>
+<p>头文件的包含关系是一种依赖，<mark>一般来说，应当让不稳定的模块依赖稳定的模块</mark>，从而当不稳定的模块发生变化时，不会影响(编译)稳定的模块。</p>
+</li>
+<li>
+<p><strong>每一个.c文件应有一个同名.h文件，用于需要对外公开的接口；</strong><br>
+如果一个.c文件不需要对外公布任何接口，则其就不应当存在，除非他是程序的入口，如main函数所在的文件。</p>
+</li>
+<li>
+<p><strong>禁止头文件循环依赖</strong></p>
+<p><strong>头文件循环依赖</strong>，<mark>指a.h包含b.h，b.h包含c.h,c.h包含a.h之类导致任何一个头文件修改，都导致所有包含a.h/b.h/c.h的代码全部重新编译一遍</mark>。如a.h包含b.h,b.h包含c.h,而c.h不包含任何头文件，则修改a.h不会导致包含b.h/c.h的源代码重新编译。</p>
+</li>
+<li>
+<p><strong>.c/.h文件禁止包含用不到的头文件</strong></p>
+<p>系统中头文件包含关系过于复杂，会导致整个系统的编译时间进一步恶化，并对后来人的维护造成巨大的麻烦。</p>
+</li>
+<li>
+<p><strong>总是编写内部#include 保护符(#define 保护)</strong></p>
+<pre><code>所有头文件都应当使用#define防止头文件被多重包含，命名格式为
+FILENAME_H,为了保证唯一性，更好命名是PROJECTNAME_PATH_FILENAME_H。
+</code></pre>
+<h4 id="定义包含保护符时应该遵守如下原则"><strong>定义包含保护符时，应该遵守如下原则</strong></h4>
+<pre><code>*保护符使用唯一名称；
+*不要在受保护部分的前后放置代码或者注释。
+</code></pre>
+<p>正确示例：假定 VOS 工程的 timer 模块的 timer.h，其目录为 VOS/include/timer/timer.h, 应按如下方式保护：</p>
+</li>
+</ol>
+<pre><code>#ifndef VOS_INCLUDE_TIMER_TIMER_H
+        #define VOS_INCLUDE_TIMER_TIMER_H
+        ...
+        #endif
+         
+        也可以使用如下简单方式保护:
+         
+        #ifndef TIMER_H
+        #define TIMER_H
+        ...
+        #endif</code></pre>
+<ol start="7">
+<li>
+<p><strong>禁止在头文件中定义变量</strong></p>
+<pre><code>  在头文件中定义变量，将会由于头文件被其他.c文件包含而导致变量重复定义。
+</code></pre>
+</li>
+<li>
+<p><strong><mark>只能通过包含头文件的方式使用其他.c提供的接口，禁止在.c中通过extern的方式使用外部函数接口、变量</mark></strong></p>
+</li>
+<li>
+<p><strong>一个模块通常包含多个.c，建议放在同一个目录下，目录名即为模块名。建议每一个模块提供一个.h，文件名为目录名</strong></p>
+</li>
+<li>
+<p><strong>同一产品同一包含头文件排列方式</strong></p>
+</li>
+</ol>
+<pre><code> * 以升序方式排列头文件可以避免头文件被重复包含；
+ * 以稳定度排序，建议将不稳的头文件放在前面，如把产品头文件放在平台的头文件前面；
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://maple-star.github.io/tag/S18NC-kLn/" class="tag">
+                    C语言
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://maple-star.github.io/post/i2c-bi-ji/">
+                  <h3 class="post-title">
+                    I2C笔记
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

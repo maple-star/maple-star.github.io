@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>     html代码显示 | maple-star</title>
+<title>I2C笔记 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,10 +18,15 @@
 
 
 
-    <meta name="description" content="   html代码显示&lt;xmp&gt;&lt;/xmp&gt;
+    <meta name="description" content="一、知识回顾
+I2C
 
-button的语义很明确，就是一个按钮不含数据，作用就是用户交互。但它也有type和value属性。 type的默认值是submit，所以点击一个button会引起表单..." />
-    <meta name="keywords" content="随手笔记" />
+I2C 是一种多主从架构串行通信总线；
+用于让主板、嵌入式系统或手机连接低速周边设备；
+I2C由两条线组成，一条双向串行数据线SDA,一条串行时钟线SCL;
+每个连接到总线的设备都有一个独立的地址来访问不同设备；
+模..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -92,60 +97,70 @@ button的语义很明确，就是一个按钮不含数据，作用就是用户�
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">     html代码显示</h2>
-            <div class="post-date">2021-11-14</div>
+            <h2 class="post-title">I2C笔记</h2>
+            <div class="post-date">2022-03-22</div>
             
             <div class="post-content" v-pre>
-              <pre><code>   html代码显示&lt;xmp&gt;&lt;/xmp&gt;
-</code></pre>
-<p>button的语义很明确，就是一个按钮不含数据，作用就是用户交互。但它也有type和value属性。 type的默认值是submit，所以点击一个button会引起表单提交：</p>
-<pre>
-<xmp>
-<form>
-  <input name='key'>
-  <button>确定</button>
-</form>
-</xmp>
-</pre>
-<p>注意:如果你在做IE浏览器的兼容，请记住button[type]在IE中的默认值是button，这意味着它只是一个按钮而不会引发表单提交。</p>
-<p>另外，我们通过设置元素内容的方式来指定button的文字。这意味着button是一个容器控件， 其中可以包含任意的HTML标签，同时样式更容易定制。这也是为什么Bootstrap 文档中大量使用button作为示例的原因之一。</p>
-<p>但是，button会很乱。button可以设置name和value。提交表单时，value会被作为表单数据提交给服务器。 在IE中，甚至会把button开始与结束标签之间的内容作为name对应的值提交给服务器。button和input的相似还不止于此，button也可以设置type=reset，此时点击按钮会导致表单被重置（这还挺有用的）。 w3school给出了如下的示例：</p>
-<pre>
-<xmp>
-<form action="form_action.asp" method="get">
-  First name: <input type="text" name="fname" />
-  Last name: <input type="text" name="lname" />
-  <button name="val" type="submit" value="Submit">Submit</button>
-  <button name="val" type="reset" value="Reset">Reset</button>
-</form>
-</xmp>
-</pre>
-<p>对于button就不多说了，建议用button作为交互用的按钮，来提交表单。同时请注意设置type=submit来兼容IE。</p>
-<pre>
-<xmp>
-        <form method="get">
-        <button class="box" name="val" type="submit" value="1">ON</button>
-        <button class="box" name="val" type="submit" value="0">OFF</button>
-       </form>
-     </xmp>
-</pre>
+              <h2 id="一-知识回顾"><strong>一、知识回顾</strong></h2>
+<h3 id="i2c">I2C</h3>
+<ul>
+<li>I2C 是一种多主从架构串行通信总线；</li>
+<li>用于让主板、嵌入式系统或手机连接低速周边设备；</li>
+<li>I2C由两条线组成，一条双向串行数据线SDA,一条串行时钟线SCL;</li>
+<li>每个连接到总线的设备都有一个独立的地址来访问不同设备；</li>
+<li>模拟I2C便于移植，硬件I2C工作效率相对较高；</li>
+<li></li>
+</ul>
+<h3 id="eeprom">EEPROM</h3>
+<ul>
+<li>EEPROM全称“电可擦除可编程只读存储器”；</li>
+<li>通常用于存放用户配置信息数据,，比如在开发板首次运行时，需要屏幕可以保存在EEPROM里，开发板断电后配置信息不丢失，下次启动，开发板自动读取EEPROM的标准配置信息，就不需要重新校准；</li>
+<li>Flash通常存放运行代码，运行过程中不会修改；</li>
+<li>EEPROM存放用户数据，可能会反复修改；</li>
+<li>EEPROM通常按字节操作；</li>
+</ul>
+<h3 id="i2c读写接口函数编写">I2C读写接口函数编写</h3>
+<h4 id="写入数据">写入数据</h4>
+ <pre><code> uint8_t M24c02Write(uint8_t  addr)
+  {
+      uint8_t dat; 
+      I2CStart();
+      I2CSendByte(0xa0);  //读
+      I2CWaitAck();
+
+       I2CSendByte(addr);
+       I2CWaitAck();
+       I2CStop();
+
+      I2CStart();
+      I2CSendByte(0xa1); //写
+      I2CWaitAck();
+      dat = I2CReceiveByte();
+      I2CWaitAck();
+      I2CStop();
+  }</code></pre>
+<h4 id="读取函数">读取函数</h4>
+<pre><code>void  M24c02Read(uint8_t addr,uint8_t dat)
+{
+      I2CStart();
+      I2CSendByte(0xa0);  //读
+      I2CWaitAck();
+     
+      I2CSendByte(addr);  //读
+      I2CWaitAck();
+      I2CSendByte(dat);  //读
+      I2CWaitAck();
+      I2CStop();
+}</code></pre>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://maple-star.github.io/tag/NAdrjUGww/" class="tag">
-                    随手笔记
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/c-zhi-zhen/">
+                <a href="https://maple-star.github.io/post/linux-ming-ling/">
                   <h3 class="post-title">
-                    C指针
+                    Linux命令
                   </h3>
                 </a>
               </div>
