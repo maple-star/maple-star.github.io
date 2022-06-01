@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>ESP8266串口烧录 | maple-star</title>
+<title>NE555芯片 | maple-star</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,14 +18,26 @@
 
 
 
-    <meta name="description" content="首先将CH340与板子对应的端口连接好
-先与电脑连接在下载之前将RET与GND短连复位后断开
-将GPIO0连接GND进入下载模式
-下载完成后此时没有任何显示
-然后断开GPIO接地，再次将RET与GND短连复位后后断开
-此时可以看到现象
-..." />
-    <meta name="keywords" content="ESP32" />
+    <meta name="description" content="NE555芯片
+一、学习回顾
+
+555优点：便宜，用途广，便于学习；
+常用用来制作延时、振荡电路、触发器；
+
+
+二、一些知识点
+
+等效原理图
+
+
+
+
+
+芯片半圆开口标志朝上左上边第一个引脚就是芯片一号引脚 ;
+
+
+引脚的顺序读法是逆时针去读..." />
+    <meta name="keywords" content="" />
   </head>
   <body>
     <div id="app" class="main">
@@ -96,33 +108,82 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">ESP8266串口烧录</h2>
-            <div class="post-date">2021-12-04</div>
+            <h2 class="post-title">NE555芯片</h2>
+            <div class="post-date">2022-05-02</div>
             
             <div class="post-content" v-pre>
-              <p>首先将CH340与板子对应的端口连接好<br>
-先与电脑连接在下载之前将RET与GND短连复位后断开<br>
-将GPIO0连接GND进入下载模式<br>
-下载完成后此时没有任何显示<br>
-然后断开GPIO接地，再次将RET与GND短连复位后后断开<br>
-此时可以看到现象</p>
+              <h1 id="ne555芯片">NE555芯片</h1>
+<h3 id="一-学习回顾">一、学习回顾</h3>
+<ol>
+<li><strong>555优点</strong>：便宜，用途广，便于学习；</li>
+<li><strong>常用用来制作<mark>延时</mark>、<mark>振荡电路</mark>、<mark>触发器</mark>；</strong></li>
+<li></li>
+</ol>
+<h3 id="二-一些知识点">二、一些知识点</h3>
+<ul>
+<li>等效原理图<br>
+<img src="https://maple-star.github.io/post-images/1651482653752.png" alt="" loading="lazy"><br>
+<img src="https://maple-star.github.io/post-images/1651484405716.png" alt="" loading="lazy"></li>
+</ul>
+<ol>
+<li>
+<p><strong>芯片半圆开口标志朝上<mark>左上边</mark>第一个引脚就是<mark>芯片一号引脚</mark></strong> ;</p>
+</li>
+<li>
+<p><strong>引脚的<mark>顺序</mark>读法是<mark>逆时针</mark>去读取</strong>;</p>
+</li>
+<li>
+<p><strong>分别在两个节点可以得到2/3 vcc和1/3 vcc两个节点电压</strong></p>
+</li>
+<li>
+<p><strong><mark>电压比较器</mark></strong><br>
+<img src="https://maple-star.github.io/post-images/1651484456305.png" alt="" loading="lazy"></p>
+</li>
+</ol>
+<ul>
+<li>如果同向输入端大于反向输入端,则输出高电平；</li>
+<li>如果同向输入端小于反向输入端,则输出低电平；</li>
+</ul>
+<ol start="5">
+<li><strong><mark>NPN三级管</mark></strong><br>
+<img src="https://maple-star.github.io/post-images/1651484467497.png" alt="" loading="lazy"></li>
+</ol>
+<ul>
+<li>给它的基极输入高电平它就能导通；</li>
+</ul>
+<h3 id="三-555引脚定义">三、555引脚定义</h3>
+<figure data-type="image" tabindex="1"><img src="https://maple-star.github.io/post-images/1651484477071.png" alt="" loading="lazy"></figure>
+<table>
+<thead>
+<tr>
+<th>引脚</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pin4</td>
+<td>通常会加一个电阻把pin4拉到vcc</td>
+</tr>
+<tr>
+<td>pin7</td>
+<td>通常对外部接入的电容进行放电</td>
+</tr>
+</tbody>
+</table>
+<h3 id="参考手册">参考手册</h3>
+<ul>
+<li><a href="https://www.alldatasheetcn.com/view.jsp?Searchword=NE555">date sheet</a></li>
+</ul>
 
             </div>
-            
-              <div class="tag-container">
-                
-                  <a href="https://maple-star.github.io/tag/cGY4V7MIB/" class="tag">
-                    ESP32
-                  </a>
-                
-              </div>
             
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://maple-star.github.io/post/xiang-shang-xiang-xia-qu-zheng/">
+                <a href="https://maple-star.github.io/post/c-yu-yan-tou-wen-jian-gui-fan/">
                   <h3 class="post-title">
-                    向上/向下取整  
+                    C语言头文件规范
                   </h3>
                 </a>
               </div>
